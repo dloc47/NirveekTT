@@ -17,6 +17,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ItineraryDetailsComponent } from './itinerary-details/itinerary-details.component';
 import { WhyChooseUsComponent } from './why-choose-us/why-choose-us.component';
 import { ReviewsComponent } from './user-reviews/reviews.component';
+import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
+import { EnquiryBarComponent } from './enquiry-bar/enquiry-bar.component';
 
 @NgModule({
   declarations: [			
@@ -34,7 +36,9 @@ import { ReviewsComponent } from './user-reviews/reviews.component';
     AboutUsComponent,
     ItineraryDetailsComponent,
     WhyChooseUsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    HomeCarouselComponent,
+    EnquiryBarComponent
    ],
   imports: [
     BrowserModule,
