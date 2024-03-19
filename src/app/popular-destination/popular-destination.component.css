@@ -1,0 +1,13 @@
+
+.owl-carousel .item{
+    height: 28rem;
+    max-width: 20rem;
+    margin: auto;
+}
+.owl-carousel .item > div:first-child{
+    margin: auto;
+    height: 100%;
+}
+
+
+  

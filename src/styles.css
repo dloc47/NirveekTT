@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+h1.section-title {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+  }
+  
+  h1.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    opacity: .8;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Adjust this value to change the thickness of the paint stroke */
+    background-image: url('https://th.bing.com/th/id/R.225fa31f2b64bbc4116e3d40c0100f47?rik=SRBXJTmwYg4XVg&riu=http%3a%2f%2fartisticpov.jessemaccabe.com%2fwp-content%2fuploads%2f2018%2f06%2fPaintBrushStroke02.png&ehk=Z%2bd64wDaFqqlsORiv1WuCprSG9o%2bb91Dq1VM8aMgOwI%3d&risl=&pid=ImgRaw&r=0'); /* Replace 'path_to_your_paint_stroke_image' with the path to your image */
+    background-size: cover;
+    background-repeat: repeat-x;
+    filter:invert(78%) sepia(7%) saturate(314%) hue-rotate(177deg) brightness(112%) contrast(91%);
+    z-index: -1;
+
+  }
