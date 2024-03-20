@@ -11,6 +11,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
   {path:'', component:HomeComponent, pathMatch:"full"},
   {path: "privacypolicy", component: PrivacyPolicyComponent },
+  {path: "about", component: AboutUsComponent },
   {path: "termsandcondition", component: TermsAndConditionsComponent },
   {path: "bookingandcancellationpolicy", component: BookingAndCancellationPolicyComponent },
   {path: "itinerary", component: ItineraryDetailsComponent },
