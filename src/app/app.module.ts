@@ -19,9 +19,10 @@ import { WhyChooseUsComponent } from './why-choose-us/why-choose-us.component';
 import { ReviewsComponent } from './user-reviews/reviews.component';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { EnquiryBarComponent } from './enquiry-bar/enquiry-bar.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -38,7 +39,8 @@ import { EnquiryBarComponent } from './enquiry-bar/enquiry-bar.component';
     WhyChooseUsComponent,
     ReviewsComponent,
     HomeCarouselComponent,
-    EnquiryBarComponent
+    EnquiryBarComponent,
+      FaqComponent
    ],
   imports: [
     BrowserModule,

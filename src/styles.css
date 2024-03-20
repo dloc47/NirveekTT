@@ -25,3 +25,7 @@ h1.section-title {
     z-index: -1;
 
   }
+
+  .section{
+    @apply px-8 md:px-16 lg:px-32;
+  }
