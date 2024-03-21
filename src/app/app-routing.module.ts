@@ -7,6 +7,7 @@ import { BookingAndCancellationPolicyComponent } from './footer/booking-and-canc
 import { PrivacyPolicyComponent } from './footer/privacy-policy/privacy-policy.component';
 import { ItineraryDetailsComponent } from './itinerary-details/itinerary-details.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent, pathMatch:"full"},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: "termsandcondition", component: TermsAndConditionsComponent },
   {path: "bookingandcancellationpolicy", component: BookingAndCancellationPolicyComponent },
   {path: "itinerary", component: ItineraryDetailsComponent },
+  {path: "faq", component: FaqComponent },
   { path: '**', component: PageNotFoundComponent }, // wildcard route for unknown paths - (Add this wildcard to last index, else it will throw an error to known route also)
 ];
 
