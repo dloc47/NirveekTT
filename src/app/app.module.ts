@@ -20,9 +20,10 @@ import { ReviewsComponent } from './user-reviews/reviews.component';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { EnquiryBarComponent } from './enquiry-bar/enquiry-bar.component';
 import { FaqComponent } from './faq/faq.component';
+import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -40,7 +41,8 @@ import { FaqComponent } from './faq/faq.component';
     ReviewsComponent,
     HomeCarouselComponent,
     EnquiryBarComponent,
-      FaqComponent
+      FaqComponent,
+      HowToReachSikkimComponent
    ],
   imports: [
     BrowserModule,

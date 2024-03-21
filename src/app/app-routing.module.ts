@@ -9,6 +9,8 @@ import { ItineraryDetailsComponent } from './itinerary-details/itinerary-details
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReviewsComponent } from './user-reviews/reviews.component';
+import { FaqComponent } from './faq/faq.component';
+import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent, pathMatch:"full"},
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path: "termsandcondition", component: TermsAndConditionsComponent },
   {path: "bookingandcancellationpolicy", component: BookingAndCancellationPolicyComponent },
   {path: "itinerary", component: ItineraryDetailsComponent },
+  {path: "faq", component: FaqComponent },
+  {path: "how-to-reach-sikkim", component: HowToReachSikkimComponent },
   { path: '**', component: PageNotFoundComponent }, // wildcard route for unknown paths - (Add this wildcard to last index, else it will throw an error to known route also)
 ];
 
