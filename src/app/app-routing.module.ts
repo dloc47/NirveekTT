@@ -7,11 +7,15 @@ import { BookingAndCancellationPolicyComponent } from './footer/booking-and-canc
 import { PrivacyPolicyComponent } from './footer/privacy-policy/privacy-policy.component';
 import { ItineraryDetailsComponent } from './itinerary-details/itinerary-details.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ReviewsComponent } from './user-reviews/reviews.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent, pathMatch:"full"},
   {path: "privacypolicy", component: PrivacyPolicyComponent },
   {path: "about", component: AboutUsComponent },
+  {path: "contact", component: ContactFormComponent },
+  {path: "review", component: ReviewsComponent },
   {path: "termsandcondition", component: TermsAndConditionsComponent },
   {path: "bookingandcancellationpolicy", component: BookingAndCancellationPolicyComponent },
   {path: "itinerary", component: ItineraryDetailsComponent },

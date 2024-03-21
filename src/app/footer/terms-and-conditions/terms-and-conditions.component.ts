@@ -10,6 +10,10 @@ export class TermsAndConditionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
 }
