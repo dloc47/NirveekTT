@@ -5,8 +5,8 @@
       <h2 class="text-2xl font-semibold">Package Name</h2>
 
       <div class="packageOverviewDetails grid grid-cols-3 my-3">
-        <p class="font-semibold text-gray-700 text-xs">Duration <span class="text-blue-500">04 Nights/05 Days</span></p>
-        <p class="font-semibold text-gray-700 text-xs">Location <span class="text-blue-500">Lachung, North Sikkim</span>
+        <p class="font-semibold text-gray-700 text-xs">Duration <span class="text-blue-500">{{currentItenary.duration}}</span></p>
+        <p class="font-semibold text-gray-700 text-xs">Location <span class="text-blue-500">{{currentItenary.destinationTitle}}</span>
         </p>
         <p class="font-semibold text-gray-700 text-xs">Rating <span class="text-blue-500">Stars</span></p>
       </div>
@@ -52,33 +52,29 @@
 
       <div id="default-styled-tab-content">
 
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-overview" role="tabpanel"
+        <div class=" p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-overview" role="tabpanel"
           aria-labelledby="overview-tab">
-          <img src="https://placehold.co/900x400" alt="img" loading="lazy" class="mb-4">
-          <strong class="font-medium text-gray-800 dark:text-white">Package Overview</strong>
+          <img src={{currentItenary.destinationImage}} alt="img" loading="lazy" class="mb-4">
+          <strong class="font-medium text-gray-800 dark:text-white">{{currentItenary.destinationTitle}}</strong>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione modi necessitatibus, repellendus explicabo
-            nostrum et saepe atque quia porro tempore excepturi nam dolor fugiat illo totam temporibus architecto
-            molestiae libero!
+            {{currentItenary.destinationDescription}}
           </p>
         </div>
 
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-itinerary" role="tabpanel"
           aria-labelledby="itinerary-tab">
           <ol class="relative border-s border-gray-200 dark:border-gray-700">
-            <li class="mb-10 ms-6">
+            <li class="mb-10 ms-6" *ngFor="let item of touritinerary;let i = index">
               <span
                 class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <i class="fa-solid fa-location-dot"></i>
               </span>
               <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                <span class="text-blue-600">Day 1</span> - Arrival Kathmandu & transfer to Pokhra
+                <span class="text-blue-600">Day {{i+1}}</span> - {{item.day}}
               </h3>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages
-                including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing
-                pages.</p>
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{item.description}}</p>
             </li>
-            <li class="mb-10 ms-6">
+            <!-- <li class="mb-10 ms-6">
               <span
                 class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <i class="fa-solid fa-location-dot"></i>
@@ -99,7 +95,7 @@
               </h3>
               <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web
                 components and interactive elements built on top of Tailwind CSS.</p>
-            </li>
+            </li> -->
           </ol>
         </div>
 
@@ -107,7 +103,11 @@
           aria-labelledby="inclusion-tab">
           <p class="text-sm text-gray-500 dark:text-gray-400">Package Includes</p>
           <ul class="inclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6">
+            <li class="flex items-center gap-6" *ngFor="let item of currentItenary.including"> 
+              <i class="fa fa-check-double fa-sm"></i>
+              <span>{{item}}</span>
+            </li>
+            <!-- <li class="flex items-center gap-6">
               <i class="fa fa-check-double fa-sm"></i>
               <span>Accommodation as per itinerary.</span>
             </li>
@@ -122,7 +122,7 @@
             <li class="flex items-center gap-6">
               <i class="fa fa-check-double fa-sm"></i>
               <span>A dedicated Tour Coordinator for the entire trip.</span>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -130,7 +130,11 @@
           aria-labelledby="exclusion-tab">
           <p class="text-sm text-gray-500 dark:text-gray-400">Package Excludes</p>
           <ul class="exclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6">
+            <li class="flex items-center gap-6" *ngFor="let item of currentItenary.exclusion">
+              <i class="fa-solid fa-xmark fa-sm"></i>
+              <span>{{item}}</span>
+            </li>
+            <!-- <li class="flex items-center gap-6">
               <i class="fa-solid fa-xmark fa-sm"></i>
               <span>Any other services or meals which are not mentioned in the above “Includes” section.</span>
             </li>
@@ -149,7 +153,7 @@
             <li class="flex items-center gap-6">
               <i class="fa-solid fa-xmark fa-sm"></i>
               <span>Any other items not mentioned in ‘Cost Includes’</span>
-            </li>
+            </li> -->
           </ul>
         </div>
 

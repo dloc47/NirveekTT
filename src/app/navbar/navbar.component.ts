@@ -7,23 +7,32 @@ import { HomeComponent } from '../home/home.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
-  constructor(private router: Router) { }
-  ngOnInit() {
 
+  constructor(private router: Router) { }
+  screenWidth: number = 0
+  ngOnInit() {
+    this.screenWidth = window.innerWidth
   }
   gotoAbout() {
-    console.log(this.router.url);
     if (this.router.url == "/") {
-      console.log("hello");
       window.scrollTo({
-        top: 1650, // Replace 500 with the desired height to scroll to
-        behavior: 'smooth' // Optional: Add smooth scrolling
+        top: 1650,
+        behavior: 'smooth'
       });
     }
     else {
-      console.log("world");
       this.router.navigate(["/about"]);
+    }
+  }
+  gotoContactUs() {
+    if (this.router.url == "/") {
+      window.scrollTo({
+        top: 4700,
+        behavior: 'smooth'
+      });
+    }
+    else {
+      this.router.navigate(["/contact"]);
     }
   }
 }

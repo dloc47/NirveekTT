@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   screenWidth: number = 0
   constructor(private router: Router) {
-    console.log(window.innerWidth);
     this.screenWidth = window.innerWidth
   }
   gotoAboutSection() {
