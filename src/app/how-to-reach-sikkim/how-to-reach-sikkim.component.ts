@@ -10,6 +10,10 @@ export class HowToReachSikkimComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

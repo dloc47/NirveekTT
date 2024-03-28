@@ -285,9 +285,9 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
           destinationImage: event.destinationImage,
           destinationTitle: event.destinationTitle,
           duration: event.duration,
-          touritinerary:JSON.stringify(event.touritinerary),
-          including:event.including,
-          exclusion:event.exclusion
+          touritinerary: JSON.stringify(event.touritinerary),
+          including: event.including,
+          exclusion: event.exclusion
         }
       }
     );
