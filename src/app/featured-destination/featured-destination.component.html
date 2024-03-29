@@ -1,9 +1,16 @@
 <section class="section bg-gradient-to-r from-blue-800 to-indigo-900 py-16 text-white mb-16">
+    <div class="section-title-container text-center">
+        <h1
+            class="mb-16 text-center section-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+            Featured Destination
+        </h1>
+    </div>
     <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">Featured Destinations</h2>
+        
+        <!-- <h2 class="text-3xl font-bold text-center mb-8">Featured Destinations</h2> -->
         <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
         <div class="">
-            <div class="owl-carousel popular-destination owl-theme">
+            <div class="owl-carousel featured-destination owl-theme">
                 <div class="item" *ngFor="let item of featuredItems">
                     <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                         <img src={{item.image}} alt="Destination 1" class="w-full h-64 object-cover">
