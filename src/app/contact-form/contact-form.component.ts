@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
-  constructor() { }
+  contactFormGroup!: FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.contactForm();
+  }
+
+  sendEmail() {
+
+  }
+
+  contactForm() {
+    this.contactFormGroup = this.fb.group({
+      name: ['', [Validators.required, this.noWhitespaceValidator]],
+      department_id: [0, [Validators.required, this.DropDownIDValidator]],
+      email_id: ['', [Validators.required, this.noWhitespaceValidator]],
+      message: ['', [Validators.required, this.noWhitespaceValidator]]
+    })
+  }
+
+  public noWhitespaceValidator(control: FormControl) {
+    return (control.value || '').trim().length ? null : { 'whitespace': true };
+  }
+
+  DropDownIDValidator(control: AbstractControl): { [key: string]: any } | null {
+    console.log(control.value);
+    if (control.value == 0) {
+      return { 'SelectValue': true }
+    }
+    return null;
   }
 
 }

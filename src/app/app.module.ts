@@ -21,6 +21,7 @@ import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { EnquiryBarComponent } from './enquiry-bar/enquiry-bar.component';
 import { FaqComponent } from './faq/faq.component';
 import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [					
@@ -46,7 +47,9 @@ import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-si
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
