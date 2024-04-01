@@ -17,14 +17,14 @@ export class ContactFormComponent implements OnInit {
   }
 
   sendEmail() {
-
+    console.log(this.contactFormGroup.valid);
   }
 
   contactForm() {
     this.contactFormGroup = this.fb.group({
       name: ['', [Validators.required, this.noWhitespaceValidator]],
-      department_id: [0, [Validators.required, this.DropDownIDValidator]],
-      email_id: ['', [Validators.required, this.noWhitespaceValidator]],
+      subject: [0, [Validators.required, this.DropDownIDValidator]],
+      email_id: ['', [Validators.required, Validators.email, this.noWhitespaceValidator]],
       message: ['', [Validators.required, this.noWhitespaceValidator]]
     })
   }

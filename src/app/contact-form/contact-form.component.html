@@ -14,29 +14,54 @@
                 <form [formGroup]="contactFormGroup" (ngSubmit)="sendEmail()">
                     <div class="mb-4">
                         <input type="text" class="py-3 px-4 w-full rounded-lg focus:outline-none"
-                            placeholder="Your Name">
+                            placeholder="Your Name" name="name" id="name" formControlName="name"
+                            [class.error-border]="contactFormGroup.get('name')?.invalid && contactFormGroup.get('name')?.touched">
+                        <div class="text-red-500 pt-1"
+                            *ngIf="contactFormGroup.get('name')?.touched && (contactFormGroup.get('name')?.hasError('required') || contactFormGroup.get('name')?.hasError('whitespace'))">
+                            <small>Name cannot be empty or contain only whitespace</small>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        <!-- <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label> -->
-                        <select id="category" class="py-3 px-4 w-full rounded-lg focus:outline-none">
-                            <option disabled selected hidden [value]="0">Select category</option>
+                        <select id="subject" class="py-3 px-4 w-full rounded-lg focus:outline-none"
+                            [class.error-border]="contactFormGroup.get('subject')?.invalid && contactFormGroup.get('subject')?.touched"
+                            formControlName="subject">
+                            <option disabled selected hidden [value]="0">Select subject</option>
                             <option value="Enquiry">Enquiry</option>
                             <option value="Feedback">Feedback</option>
                             <option value="Complaint">Complaint</option>
                             <option value="Other">Other</option>
                         </select>
+                        <div class="text-red-500 pt-1"
+                            *ngIf="contactFormGroup.get('subject')?.hasError('SelectValue') && contactFormGroup.get('subject')?.touched">
+                            <small>Please select a subject</small>
+                        </div>
                     </div>
                     <div class="mb-4">
                         <input type="email" class="py-3 px-4 w-full rounded-lg focus:outline-none"
-                            placeholder="Your Email Address">
+                            placeholder="Your Email Address" name="email_id" id="email_id" formControlName="email_id"
+                            [class.error-border]="contactFormGroup.get('email_id')?.invalid && contactFormGroup.get('email_id')?.touched">
+                        <div class="text-red-500 pt-1"
+                            *ngIf="contactFormGroup.get('email_id')?.touched && contactFormGroup.get('email_id')?.hasError('email')">
+                            <small>Invalid email format</small>
+                        </div>
+                        <div class="text-red-500 pt-1"
+                            *ngIf="contactFormGroup.get('email_id')?.touched && (contactFormGroup.get('email_id')?.hasError('required') || contactFormGroup.get('email_id')?.hasError('whitespace'))">
+                            <small>Email_id cannot be empty or contain only whitespace</small>
+                        </div>
                     </div>
                     <div class="mb-4">
                         <textarea class="py-3 px-4 w-full rounded-lg focus:outline-none" placeholder="Your Message"
-                            rows="4"></textarea>
+                            rows="4" name="message" id="message" formControlName="message"
+                            [class.error-border]="contactFormGroup.get('message')?.invalid && contactFormGroup.get('message')?.touched"></textarea>
+                        <div class="text-red-500 pt-1"
+                            *ngIf="contactFormGroup.get('message')?.touched && (contactFormGroup.get('message')?.hasError('required') || contactFormGroup.get('message')?.hasError('whitespace'))">
+                            <small>Message cannot be empty or contain only whitespace</small>
+                        </div>
                     </div>
                     <div>
                         <button type="submit"
-                            class="bg-blue-700 text-white py-3 px-8 rounded-lg hover:bg-blue-800 focus:outline-none text-sm float-right">Send
+                            class="bg-blue-700 text-white py-3 px-8 rounded-lg hover:bg-blue-800 focus:outline-none text-sm float-right disabled:cursor-not-allowed disabled:bg-blue-800"
+                            [disabled]="contactFormGroup.invalid">Send
                             Message</button>
                     </div>
                 </form>
