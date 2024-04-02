@@ -6,10 +6,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+
   screenWidth: number = 0
+
   constructor(private router: Router) {
     this.screenWidth = window.innerWidth
   }
+
   gotoAboutSection() {
     console.log(this.router.url);
     if (this.router.url != "/") {
@@ -24,7 +27,8 @@ export class FooterComponent {
       });
     }
   }
-  gotoContectusSection() {
+
+  gotoContactUsSection() {
     if (this.router.url != "/") {
       this.router.navigate([`/contact`],
         { queryParams: { data: 'comefromfooter' } }
@@ -49,6 +53,7 @@ export class FooterComponent {
       }
     }
   }
+
   gotoCustomerReviewSection() {
     if (this.router.url != "/") {
       this.router.navigate([`/review`],
@@ -66,4 +71,5 @@ export class FooterComponent {
       });
     }
   }
+  
 }

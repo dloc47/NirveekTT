@@ -11,9 +11,10 @@ export class ReviewsComponent implements OnInit, AfterViewInit {
   isExpanded = false;
 
   constructor() { }
-  ngOnInit(): void {
 
+  ngOnInit() {
   }
+
   ngAfterViewInit(): void {
 
     $('.reviews').owlCarousel({

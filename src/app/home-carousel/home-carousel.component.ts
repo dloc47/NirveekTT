@@ -6,37 +6,10 @@ declare var $: any;
   styleUrls: ['./home-carousel.component.css']
 })
 export class HomeCarouselComponent implements OnInit{
+
   constructor() { }
-  ngOnInit() {
-    console.log("hello");
-    
+
+  ngOnInit() {   
   }
-  // ngAfterViewInit(): void {
-  //   $('.featured-destination').owlCarousel({
-  //     loop: true,
-  //     items: 4,
-  //     //margin:25,
-  //     // autoplay:true,
-  //     autoplayTimeout: 2000,
-  //     autoplayHoverPause: true,
-  //     nav: false,
-  //     responsive: {
-  //       0: {
-  //         items: 1
-  //       },
-  //       500: {
-  //         items: 2
-  //       },
-  //       800: {
-  //         items: 2
-  //       },
-  //       1200: {
-  //         items: 3
-  //       },
-  //       1500: {
-  //         items: 4
-  //       }
-  //     }
-  //   })
-  // }
+  
 }

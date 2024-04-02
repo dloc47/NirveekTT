@@ -8,11 +8,14 @@ import { HomeComponent } from '../home/home.component';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
   screenWidth: number = 0
+
+  constructor(private router: Router) { }
+  
   ngOnInit() {
     this.screenWidth = window.innerWidth
   }
+
   gotoAbout() {
     if (this.router.url == "/") {
       window.scrollTo({
@@ -24,6 +27,7 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(["/about"]);
     }
   }
+
   gotoContactUs() {
     if (this.router.url == "/") {
       window.scrollTo({
@@ -35,4 +39,5 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(["/contact"]);
     }
   }
+  
 }

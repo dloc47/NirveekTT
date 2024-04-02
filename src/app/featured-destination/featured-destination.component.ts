@@ -9,6 +9,7 @@ declare var $: any;
 export class FeaturedDestinationComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+
   featuredItems: any[] = [
     {
       image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
@@ -38,13 +39,6 @@ export class FeaturedDestinationComponent implements OnInit, AfterViewInit {
       duration: "5 Days/4 Nights",
       price: "₹300/person"
     },
-    // {
-    //   image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
-    //   title: "MISTTREE MOUNTAIN", //two packages with same name
-    //   location: "Kalimpong, Gangtok",
-    //   duration: "5 Days/4 Nights",
-    //   price: "₹300/person"
-    // },
     {
       image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
       title: "LOST OF KINGDOM",
@@ -144,6 +138,7 @@ export class FeaturedDestinationComponent implements OnInit, AfterViewInit {
       price: "₹300/person"
     }
   ];
+  
   ngAfterViewInit(): void {
     $('.featured-destination').owlCarousel({
       loop: true,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -14,6 +14,16 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm();
+  }
+
+  @HostListener('window:scroll')
+  onScroll() {
+    // Handle scroll event
+    console.log('Scrolling');
+  }
+
+  addScrollEventListener() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
   }
 
   sendEmail() {
