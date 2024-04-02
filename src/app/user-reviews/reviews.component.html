@@ -15,7 +15,7 @@
 
       <div class="mt-8 flex gap-4 lg:mt-0 owl-nav">
         <button aria-label="Previous slide" id="keen-slider-previous"
-          class="rounded-full border border-blue-600 p-3 text-blue-600 transition hover:bg-blue-600 hover:text-white custom-nav-btn prev-btn">
+          class="rounded-full border border-primary-color p-3 text-primary-color transition hover:bg-primary-color hover:text-white custom-nav-btn prev-btn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="size-5 rtl:rotate-180">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -23,7 +23,7 @@
         </button>
 
         <button aria-label="Next slide"
-          class="rounded-full border border-blue-600 p-3 text-blue-600 transition hover:bg-blue-600 hover:text-white custom-nav-btn next-btn">
+          class="rounded-full border border-primary-color p-3 text-primary-color transition hover:bg-primary-color hover:text-white custom-nav-btn next-btn">
           <svg class="size-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -66,7 +66,7 @@
               </div>
 
               <div class="mt-4">
-                <p class="text-2xl font-bold text-blue-600 sm:text-3xl">
+                <p class="text-2xl font-bold text-primary-color sm:text-3xl">
                   Stayin' Alive {{isExpanded}}
                 </p>
 
@@ -92,12 +92,12 @@
                   somebody with no arms or legs, do we bother resuscitating
                   them? I mean, what quality of life do we have there?
                 </p>
-                <span *ngIf="!isExpanded" class="mt-4 leading-relaxed expand-content cursor-pointer text-blue-600"
+                <span *ngIf="!isExpanded" class="mt-4 leading-relaxed expand-content cursor-pointer text-primary-color"
                   (click)="toggleExpand()">
                   Show more
                 </span>
 
-                <span *ngIf="isExpanded" class="mt-4 leading-relaxed expand-content cursor-pointer text-blue-600"
+                <span *ngIf="isExpanded" class="mt-4 leading-relaxed expand-content cursor-pointer text-primary-color"
                   (click)="toggleExpand()" [ngClass]="{ 'hidden': !isExpanded }">
                   Show less
                 </span>
@@ -140,7 +140,7 @@
               </div>
 
               <div class="mt-4">
-                <p class="text-2xl font-bold text-blue-600 sm:text-3xl">
+                <p class="text-2xl font-bold text-primary-color sm:text-3xl">
                   Stayin' Alive
                 </p>
 
@@ -189,7 +189,7 @@
               </div>
 
               <div class="mt-4">
-                <p class="text-2xl font-bold text-blue-600 sm:text-3xl">
+                <p class="text-2xl font-bold text-primary-color sm:text-3xl">
                   Stayin' Alive
                 </p>
 
