@@ -1,14 +1,23 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Injectable } from '@angular/core';
+import { ItineraryService } from '../itinerary.service';
+import { Subscription } from 'rxjs';
+
 declare var $: any;
 
+@Injectable()
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  private triggerFunctionSubscription: Subscription = Subscription.EMPTY;
+  constructor(private itineraryService: ItineraryService) { 
+    this.triggerFunctionSubscription = this.itineraryService.notifyObservable$.subscribe((res:any) => {
+      console.log(res);
+      this.scrollToItinerarySection(res);
+    });
+  }
   // ngAfterViewInit(): void {
   //   $('.featured-destination').owlCarousel({
   //     loop: true,
@@ -41,14 +50,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  scrollToTarget() {
-    setTimeout(() => {
-      const element = document.getElementById('targetElement');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-      }
-    });
+  // scrollToTarget() {
+  //   setTimeout(() => {
+  //     const element = document.getElementById('targetElement');
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+  //     }
+  //   });
+  // }
+  scrollToItinerarySection(data:any) {
+    const element = document.getElementById(data);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
   }
-
 
 }
