@@ -2,11 +2,13 @@
   <div class="grid lg:grid-cols-3 lg:gap-4 lg:justify-items-end">
     <div class="itinerary-details lg:col-span-2 w-full">
 
-      <h2 class="text-2xl font-semibold">Package Name</h2>
+      <h2 class="text-2xl font-semibold">{{currentItenary.destinationTitle}}</h2>
 
-      <div class="packageOverviewDetails grid grid-cols-3 my-3">
-        <p class="font-semibold text-gray-700 text-xs">Duration <span class="text-blue-500">{{currentItenary.duration}}</span></p>
-        <p class="font-semibold text-gray-700 text-xs">Location <span class="text-blue-500">{{currentItenary.destinationTitle}}</span>
+      <div class="packageOverviewDetails grid grid-cols-3 my-6">
+        <p class="font-semibold text-gray-700 text-xs">Duration <span
+            class="text-blue-500">{{currentItenary.duration}}</span></p>
+        <p class="font-semibold text-gray-700 text-xs">Location <span
+            class="text-blue-500">{{currentItenary.destinationTitle}}</span>
         </p>
         <p class="font-semibold text-gray-700 text-xs">Rating <span class="text-blue-500">Stars</span></p>
       </div>
@@ -56,110 +58,54 @@
           aria-labelledby="overview-tab">
           <img src={{currentItenary.destinationImage}} alt="img" loading="lazy" class="mb-4">
           <strong class="font-medium text-gray-800 dark:text-white">{{currentItenary.destinationTitle}}</strong>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 leading-5">
             {{currentItenary.destinationDescription}}
           </p>
         </div>
 
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-itinerary" role="tabpanel"
           aria-labelledby="itinerary-tab">
-          <ol class="relative border-s border-gray-200 dark:border-gray-700">
-            <li class="mb-10 ms-6" *ngFor="let item of touritinerary;let i = index">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Daily Itinerary</p>
+          <ol class="relative border-s border-gray-200 dark:border-gray-700 left-4">
+            <li class="mt-8 ms-6 my-8 space-y-3" *ngFor="let item of touritinerary; let i = index">
               <span
                 class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <i class="fa-solid fa-location-dot"></i>
               </span>
-              <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                <span class="text-blue-600">Day {{i+1}}</span> - {{item.day}}
-              </h3>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{item.description}}</p>
+              <strong class="flex items-center font-medium text-gray-800 dark:text-white ms-2">
+                <span class="text-blue-600">Day {{i+1}}</span>
+                - {{item.day}}
+              </strong>
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 ms-2">{{item.description}}</p>
             </li>
-            <!-- <li class="mb-10 ms-6">
-              <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                <i class="fa-solid fa-location-dot"></i>
-              </span>
-              <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                <span class="text-blue-600">Day 2</span> - Arrival Kathmandu & transfer to Pokhra
-              </h3>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are
-                first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
-            </li>
-            <li class="ms-6">
-              <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                <i class="fa-solid fa-location-dot"></i>
-              </span>
-              <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                <span class="text-blue-600">Day 3</span> - Arrival Kathmandu & transfer to Pokhra
-              </h3>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web
-                components and interactive elements built on top of Tailwind CSS.</p>
-            </li> -->
           </ol>
         </div>
 
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-inclusion" role="tabpanel"
           aria-labelledby="inclusion-tab">
-          <p class="text-sm text-gray-500 dark:text-gray-400">Package Includes</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Includes</p>
           <ul class="inclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6" *ngFor="let item of currentItenary.including"> 
+            <li class="flex items-center gap-6" *ngFor="let item of currentItenary.including">
               <i class="fa fa-check-double fa-sm"></i>
               <span>{{item}}</span>
             </li>
-            <!-- <li class="flex items-center gap-6">
-              <i class="fa fa-check-double fa-sm"></i>
-              <span>Accommodation as per itinerary.</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa fa-check-double fa-sm"></i>
-              <span>All transfers & sight seeings as per itinerary.</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa fa-check-double fa-sm"></i>
-              <span>Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa fa-check-double fa-sm"></i>
-              <span>A dedicated Tour Coordinator for the entire trip.</span>
-            </li> -->
           </ul>
         </div>
 
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-exclusion" role="tabpanel"
           aria-labelledby="exclusion-tab">
-          <p class="text-sm text-gray-500 dark:text-gray-400">Package Excludes</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Excludes</p>
           <ul class="exclusionBullets my-8 space-y-6">
             <li class="flex items-center gap-6" *ngFor="let item of currentItenary.exclusion">
               <i class="fa-solid fa-xmark fa-sm"></i>
               <span>{{item}}</span>
             </li>
-            <!-- <li class="flex items-center gap-6">
-              <i class="fa-solid fa-xmark fa-sm"></i>
-              <span>Any other services or meals which are not mentioned in the above “Includes” section.</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa-solid fa-xmark fa-sm"></i>
-              <span>Expense of personal nature such as tips, laundry, telephones, beverages etc</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa-solid fa-xmark fa-sm"></i>
-              <span>Entry fee for all monuments and places of interest if any</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa-solid fa-xmark fa-sm"></i>
-              <span>Airfares and Train ticket charges if any</span>
-            </li>
-            <li class="flex items-center gap-6">
-              <i class="fa-solid fa-xmark fa-sm"></i>
-              <span>Any other items not mentioned in ‘Cost Includes’</span>
-            </li> -->
           </ul>
         </div>
 
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-policy" role="tabpanel"
           aria-labelledby="policy-tab">
-          <p class="text-sm text-gray-500 dark:text-gray-400">Terms & Conditions</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Terms & Conditions</p>
           <div class="conditions my-8">
             <p class="font-semibold">Payment Terms & Methods :</p>
             <p>50% Advance Percentage of total booking amount</p>
@@ -182,14 +128,16 @@
               compromising any services.
               The vehicle used is AC/NAC and is available for point to point services only and is not at disposal.
               Clients are requested to follow the itinerary.
-             <br> <span class="font-semibold text-sm">PAYMENT TERMS :</span> 50 % at the time of booking and balance 7 days
+              <br> <span class="font-semibold text-sm">PAYMENT TERMS :</span> 50 % at the time of booking and balance 7
+              days
               prior travel
               date. All bookings are on special corporate non-refundable
               basis.
-             <br> <span class="font-semibold text-sm">CONFIRMATION & RATE :</span> No bookings are guaranteed without
+              <br> <span class="font-semibold text-sm">CONFIRMATION & RATE :</span> No bookings are guaranteed without
               advance payment and
               Rates are subject to availability.
-             <br> <span class="font-semibold text-sm">INFORMATION NEEDED :</span> Accurate Arrival and Departure timing to
+              <br> <span class="font-semibold text-sm">INFORMATION NEEDED :</span> Accurate Arrival and Departure timing
+              to
               be
               informed in
               advance.
