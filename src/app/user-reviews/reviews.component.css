@@ -1,0 +1,38 @@
+/* .item {
+    max-height: 462px;
+    overflow: hidden;
+  } */
+
+
+/* .item p {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    } */
+
+.item p {
+    overflow: hidden;
+}
+
+.item p.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.expand {
+    max-height: none;
+}
+
+.expand-content {
+    text-align: center;
+    cursor: pointer;
+}
+
+.expand-content:hover {
+    text-decoration: underline;
+}
+

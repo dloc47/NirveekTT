@@ -12,7 +12,6 @@ export class AboutUsComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe((res: any) => {
       if (res.data == "comefromfooter") {
-        console.log("ddddd");
         window.scrollTo({
           top: 0,
           behavior: 'smooth'

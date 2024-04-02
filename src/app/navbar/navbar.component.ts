@@ -9,8 +9,10 @@ import { ItineraryService } from '../itinerary.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router, private service: ItineraryService) { }
   screenWidth: number = 0
+
+  constructor(private router: Router, private service: ItineraryService) { }
+
   ngOnInit() {
     this.screenWidth = window.innerWidth
   }
@@ -33,6 +35,7 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(["/"]);
     }
   }
+
   gotoContactUs() {
     if (this.router.url == "/") {
       this.service.goToAbout("contact");
