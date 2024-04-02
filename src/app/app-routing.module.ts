@@ -13,7 +13,7 @@ import { FaqComponent } from './faq/faq.component';
 import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent, pathMatch:"full"},
+  {path: '', component:HomeComponent, pathMatch:"full"},
   {path: "privacypolicy", component: PrivacyPolicyComponent },
   {path: "about", component: AboutUsComponent },
   {path: "contact", component: ContactFormComponent },
