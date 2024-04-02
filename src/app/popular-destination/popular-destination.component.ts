@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ItineraryService } from '../itinerary.service';
 declare var $: any;
 
 @Component({
@@ -9,7 +10,7 @@ declare var $: any;
 })
 export class PopularDestinationComponent implements OnInit, AfterViewInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private ItineraryService:ItineraryService) { }
   popularDestination: any = [
     {
       destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
@@ -281,6 +282,7 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
       {
         queryParams:
         {
+          test:"1",
           destinationDescription: event.destinationDescription,
           destinationImage: event.destinationImage,
           destinationTitle: event.destinationTitle,
