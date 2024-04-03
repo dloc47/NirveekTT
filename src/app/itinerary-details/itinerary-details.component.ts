@@ -69,7 +69,7 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
     const tabs: TabsInterface = new Tabs(tabsElement, tabElements, options, instanceOptions);
 
     // open tab item based on id
-    tabs.show('itinerary-styled-tab');
+    tabs.show('policy-styled-tab');
   }
 
   ngOnInit() {
