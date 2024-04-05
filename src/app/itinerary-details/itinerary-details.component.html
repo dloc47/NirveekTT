@@ -6,11 +6,11 @@
 
       <div class="packageOverviewDetails grid grid-cols-3 my-6">
         <p class="font-semibold text-gray-700 text-xs">Duration <span
-            class="text-blue-500">{{currentItenary.duration}}</span></p>
+            class="text-primary-color">{{currentItenary.duration}}</span></p>
         <p class="font-semibold text-gray-700 text-xs">Location <span
-            class="text-blue-500">{{currentItenary.destinationTitle}}</span>
+            class="text-primary-color">{{currentItenary.destinationTitle}}</span>
         </p>
-        <p class="font-semibold text-gray-700 text-xs">Rating <span class="text-blue-500">Stars</span></p>
+        <p class="font-semibold text-gray-700 text-xs">Rating <span class="text-primary-color">Stars</span></p>
       </div>
 
 
@@ -18,7 +18,7 @@
       <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
           data-tabs-toggle="#default-styled-tab-content"
-          data-tabs-active-classes="text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
+          data-tabs-active-classes="text-primary-color font-bold text-md border-b-[3px] hover:text-primary-hover-color dark:text-blue-500 dark:hover:text-blue-500 border-primary-color hover:border-primary-hover-color dark:border-blue-500"
           data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
           role="tablist">
           <li class="me-2" role="presentation">
@@ -58,7 +58,7 @@
           aria-labelledby="overview-tab">
           <img src={{currentItenary.destinationImage}} alt="img" loading="lazy" class="mb-4">
           <!-- <strong class="font-medium text-gray-800 dark:text-white">{{currentItenary.destinationTitle}}</strong> -->
-          <strong class="font-medium text-gray-800 dark:text-white">Overview</strong>
+          <strong class="font-medium text-primary-color dark:text-white">Overview</strong>
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
             {{currentItenary.destinationDescription}}
           </p>
@@ -70,11 +70,11 @@
           <ol class="relative border-s border-gray-200 dark:border-gray-700 left-4">
             <li class="ms-6 my-8 space-y-2" *ngFor="let item of touritinerary; let i = index">
               <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                class="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <i class="fa-solid fa-location-dot"></i>
               </span>
               <strong class="flex font-medium text-gray-800 dark:text-white ms-4">
-                <span class="text-blue-600">Day {{i+1}}</span>
+                <span class="text-primary-color">Day {{i+1}}</span>
                 - {{item.day}}
               </strong>
               <p class="text-base font-normal text-gray-500 dark:text-gray-400 ms-4">{{item.description}}</p>
@@ -87,7 +87,7 @@
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Includes</p>
           <ul class="inclusionBullets my-8 space-y-6">
             <li class="flex items-center gap-6" *ngFor="let item of currentItenary.including">
-              <i class="fa fa-check-double fa-sm"></i>
+              <i class="fa fa-check-double fa-sm text-primary-color"></i>
               <span>{{item}}</span>
             </li>
           </ul>
@@ -98,7 +98,7 @@
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Excludes</p>
           <ul class="exclusionBullets my-8 space-y-6">
             <li class="flex items-center gap-6" *ngFor="let item of currentItenary.exclusion">
-              <i class="fa-solid fa-xmark fa-sm"></i>
+              <i class="fa-solid fa-xmark fa-sm text-red-600"></i>
               <span>{{item}}</span>
             </li>
           </ul>
@@ -160,7 +160,8 @@
 
     </div>
 
-    <div class="contactDetails w-full space-y-8 md:space-y-0 md:flex md:space-x-8 lg:block lg:space-x-0 lg:space-y-8 mt-8 lg:mt-44 mb-12">
+    <div
+      class="contactDetails w-full space-y-8 md:space-y-0 md:flex md:space-x-8 lg:block lg:space-x-0 lg:space-y-8 mt-8 lg:mt-44 mb-12">
 
       <div class="block w-full lg:max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800
          dark:border-gray-700 dark:hover:bg-gray-700 text-center">
@@ -168,7 +169,7 @@
           package</h5>
         <a href="#">
           <button type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md 
+            class="text-white bg-primary-color hover:bg-primary-hover-color focus:ring-4 focus:ring-green-300 font-medium rounded-md 
           text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-full">
             Enquire Now <i class="ms-1 fa-brands fa-whatsapp fa-lg"></i>
           </button>
@@ -181,7 +182,7 @@
         </h5>
         <div class="flex items-center justify-center mb-2">
           <div class="callIcon">
-            <i class="fa-solid fa-phone text-blue-700 fa-2xl"></i>
+            <i class="fa-solid fa-phone text-primary-color fa-2xl"></i>
           </div>
           <div class="contactParagraph">
             <p class="ml-2 text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
