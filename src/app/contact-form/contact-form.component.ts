@@ -51,4 +51,12 @@ export class ContactFormComponent implements OnInit {
     return null;
   }
 
+  // emailjs.send("service_psx1wan","template_wnro4ih",{
+  //   from_name: "Deepak Chettri",
+  //   to_name: "Test Elevate",
+  //   from_email: "deepakchettri877@gmail.com",
+  //   subject: "First Test",
+  //   message: "First ever test from emailjs website",
+  //   });
+
 }
