@@ -13,6 +13,13 @@ export class FeaturedDestinationComponent implements OnInit, AfterViewInit {
   featuredItems: any[] = [
     {
       image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      title: "SWEET MEMORY OF KHANCHENJUNGNA",
+      location: "Okhrey, Varsey, Rinchenpong, Pelling, Gangtok",
+      duration: "9 Days/8 Nights",
+      price: "₹300/person"
+    },
+    {
+      image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
       title: "QUEEN OF HILLS",
       location: "Darjeeling",
       duration: "4 Days/3 Nights",
@@ -65,13 +72,6 @@ export class FeaturedDestinationComponent implements OnInit, AfterViewInit {
       title: "COOL KANCHENJUNGA",
       location: "Okhrey, Varsey, Pelling, Tashiding",
       duration: "7 Days/6 Nights",
-      price: "₹300/person"
-    },
-    {
-      image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
-      title: "SWEET MEMORY OF KHANCHENJUNGNA",
-      location: "Okhrey, Varsey, Rinchenpong, Pelling, Gangtok",
-      duration: "9 Days/8 Nights",
       price: "₹300/person"
     },
     {

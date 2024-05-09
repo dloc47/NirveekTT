@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InstanceOptions, TabItem, Tabs, TabsInterface, TabsOptions } from 'flowbite';
+import { ItineraryService } from '../itinerary.service';
 
 @Component({
   selector: 'app-itinerary-details',
@@ -13,7 +14,7 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
   currentItenary: any;
   count = 0
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private itineraryService: ItineraryService) { }
 
   ngAfterViewInit(): void {
     const tabsElement: HTMLElement | any = document.getElementById('default-styled-tab');
@@ -79,9 +80,13 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
     });
     this.route.queryParams.subscribe((res: any) => {
       console.log(res);
+      console.log(this.itineraryService.popularDestination);
+      console.log(this.itineraryService.popularDestination[res.destinationId-1]);
+      
       this.count++
-      this.currentItenary = res;
-      this.touritinerary = JSON.parse(res.touritinerary);
+      this.currentItenary = this.itineraryService.popularDestination[res.destinationId-1];
+      // this.touritinerary = JSON.parse(res.touritinerary);
+      this.touritinerary = this.currentItenary.touritinerary;
       // window.location.reload();
     })
 
