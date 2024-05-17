@@ -16,18 +16,37 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.screenWidth = window.innerWidth
   }
-  // gotoAbout() {
-  //   if (this.router.url == "/") {
-  //     window.scrollTo({
-  //       top: 1650,
-  //       behavior: 'smooth'
-  //     });
-  //   }
-  //   else {
-  //     this.router.navigate(["/about"]);
-  //   }
-  // }
-  goToHome(){
+
+  // destinationByPlace : any[] = ["Darjeeling", "Mirik", "Kalimpong", "Gangtok", "Lachung", "Lachen", "Pelling",  "Namchi", "Ravangla"];
+  // destinationByTheme : any[] = [];
+
+  destinations: any[] = [
+    {
+      region: 'East Sikkim',
+      places: ['Aritar', 'Gangtok', 'Tsogmo', 'Nathula', 'Zuluk', 'Rumtek']
+    },
+    {
+      region: 'North Sikkim',
+      places: ['Chungthang', 'Lachung', 'Lachen', 'Mangan', 'Singhik', 'Yumthang valley']
+    },
+    {
+      region: 'South Sikkim',
+      places: ['Jorethang', 'Namchi', 'Ravangla']
+    },
+    {
+      region: 'West Sikkim',
+      places: ['Geyzing', 'Kaluk', 'Legship', 'Pelling', 'Okharey', 'Rinchenpong', 'Uttarey']
+    },
+    {
+      region: 'Attractions',
+      places: ['Tsongmo Lake', 'Rumtek Monastry', 'Rabdentse Ruins', 'Nathu La Pass', 'Khecheopari Lake', 'Khangchenzonga National Park',
+        'Gurudongmar Lake', 'Buddha Park', 'Chardham', 'Barsey Rhododendron Sanctuary', 'Baba Harbahajan Singh Temple'
+      ]
+    }
+  ];
+
+
+  goToHome() {
     if (this.router.url == "/") {
       this.service.goToAbout("home");
     }
