@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ItineraryService } from '../itinerary.service';
+import { ItineraryService } from '../services/itinerary.service';
 declare var $: any;
 
 @Component({

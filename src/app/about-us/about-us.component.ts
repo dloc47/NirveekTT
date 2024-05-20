@@ -10,14 +10,14 @@ export class AboutUsComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe((res: any) => {
-      if (res.data == "comefromfooter") {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-    })
+    // this.route.queryParams.subscribe((res: any) => {
+    //   if (res.data == "comefromfooter") {
+    //     window.scrollTo({
+    //       top: 0,
+    //       behavior: 'smooth'
+    //     });
+    //   }
+    // })
   }
 
 }

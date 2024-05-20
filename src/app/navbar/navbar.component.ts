@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
-import { ItineraryService } from '../itinerary.service';
+import { ItineraryService } from '../services/itinerary.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -46,30 +46,31 @@ export class NavbarComponent implements OnInit {
   ];
 
 
-  goToHome() {
-    if (this.router.url == "/") {
-      this.service.goToAbout("home");
-    }
-    else {
-      this.router.navigate(["/"]);
-    }
-  }
+  // goToHome() {
+  //   if (this.router.url == "/") {
+  //     this.service.goToAbout("home");
+  //   }
+  //   else {
+  //     this.router.navigate(["/"]);
+  //   }
+  // }
 
-  gotoContactUs() {
-    if (this.router.url == "/") {
-      this.service.goToAbout("contact");
-    }
-    else {
-      this.router.navigate(["/contact"]);
-    }
-  }
-  goToAbout() {
+  // gotoContactUs() {
+  //   if (this.router.url == "/") {
+  //     this.service.goToAbout("contact");
+  //   }
+  //   else {
+  //     this.router.navigate(["/contact"]);
+  //   }
+  // }
+  
 
-    if (this.router.url == "/") {
-      this.service.goToAbout("about");
-    }
-    else {
-      this.router.navigate(["/about"]);
-    }
-  }
+  // goToAbout() {
+  //   if (this.router.url == "/") {
+  //     this.service.goToAbout("about");
+  //   }
+  //   else {
+  //     this.router.navigate(["/about"]);
+  //   }
+  // }
 }

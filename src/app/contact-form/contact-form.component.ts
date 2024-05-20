@@ -44,7 +44,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   DropDownIDValidator(control: AbstractControl): { [key: string]: any } | null {
-    console.log(control.value);
+    // console.log(control.value);
     if (control.value == 0) {
       return { 'SelectValue': true }
     }

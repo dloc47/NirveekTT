@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InstanceOptions, TabItem, Tabs, TabsInterface, TabsOptions } from 'flowbite';
-import { ItineraryService } from '../itinerary.service';
+import { ItineraryService } from '../services/itinerary.service';
 
 @Component({
   selector: 'app-itinerary-details',

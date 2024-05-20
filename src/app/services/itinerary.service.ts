@@ -10,7 +10,7 @@ export class ItineraryService {
   public notifyObservable$ = this.notify.asObservable();
   public popularDestination: any = [
     {
-      destinationId:1,
+      destinationId: 1,
       destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "Tsomgu",
@@ -44,7 +44,7 @@ export class ItineraryService {
       ]
     },
     {
-      destinationId:2,
+      destinationId: 2,
       destinationImage: "https://www.tripsavvy.com/thmb/58A3iO4pNLWV-yojm0QbsrmurbM=/2121x1414/filters:fill(auto,1)/GettyImages-606222988-5a823cff1d64040037dfd9a1.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "East Sikkim",
@@ -78,7 +78,7 @@ export class ItineraryService {
       ]
     },
     {
-      destinationId:3,
+      destinationId: 3,
       destinationImage: "https://1.bp.blogspot.com/-bSHlkhZGU2c/Vry_ziFJFhI/AAAAAAAAISA/JZqhGw5_xyc/s1600/Zuluk.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "Zuluk",
@@ -112,7 +112,7 @@ export class ItineraryService {
       ]
     },
     {
-      destinationId:4,
+      destinationId: 4,
       destinationImage: "https://www.sikkimtourismindia.com/blog/wp-content/uploads/2020/04/Sikkim-tour-01.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "Buddha Park",
@@ -146,7 +146,7 @@ export class ItineraryService {
       ]
     },
     {
-      destinationId:5,
+      destinationId: 5,
       destinationImage: "https://www.alightindia.com/CDN/Content/Images/PostImages/ORIGINAL/sk9--6cbecf.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "Geyzing",
@@ -180,7 +180,7 @@ export class ItineraryService {
       ]
     },
     {
-      destinationId:6,
+      destinationId: 6,
       destinationImage: "https://www.wtravelmagazine.com/wp-content/uploads/2020/09/30.113.12-Stunning-landscapes-at-Gurudongmar-Lake-North-Sikkim-image-by-Sudip-Ray.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "Nathula Border",
@@ -214,7 +214,7 @@ export class ItineraryService {
       ]
     },
     {
-      destinationId:7,
+      destinationId: 7,
       destinationImage: "https://wallpapercave.com/wp/wp6560045.jpg",
       duration: "3 Days, 4 Nights",
       destinationTitle: "Lachung",
@@ -248,9 +248,9 @@ export class ItineraryService {
       ]
     }
   ];
-  public goToAbout(data: string) {
-    if (data) {
-      this.notify.next(data);
-    }
-  }
+  // public goToAbout(data: string) {
+  //   if (data) {
+  //     this.notify.next(data);
+  //   }
+  // }
 }

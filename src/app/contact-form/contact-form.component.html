@@ -1,5 +1,5 @@
-<section class="section bg-green-100 py-16">
-    <div class="container mx-auto flex flex-col md:flex-row gap-6">
+<section class="section bg-green-100 py-10">
+    <div class="mx-auto flex flex-col md:flex-row gap-2 md:gap-6 mt-12">
         <div class="w-full md:w-1/2 mb-4 md:mb-0">
             <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="height: 100%;">
                 <iframe
@@ -13,7 +13,8 @@
                 <h2 class="text-2xl font-bold mb-6">Contact Us</h2>
                 <form [formGroup]="contactFormGroup" (ngSubmit)="sendEmail()">
                     <div class="mb-4">
-                        <input type="text" class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
+                        <input type="text"
+                            class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
                             placeholder="Your Name" name="name" id="name" formControlName="name"
                             [ngClass]="{'error-border': contactFormGroup.get('name')?.invalid && contactFormGroup.get('name')?.touched, 
                             'focus:border-gray-500': contactFormGroup.get('name')?.invalid && contactFormGroup.get('name')?.touched}">
@@ -23,9 +24,11 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <select id="subject" class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
+                        <select id="subject"
+                            class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
                             [ngClass]="{'error-border': contactFormGroup.get('subject')?.invalid && contactFormGroup.get('subject')?.touched, 
-                        'focus:border-gray-500': contactFormGroup.get('subject')?.invalid && contactFormGroup.get('subject')?.touched}" formControlName="subject">
+                        'focus:border-gray-500': contactFormGroup.get('subject')?.invalid && contactFormGroup.get('subject')?.touched}"
+                            formControlName="subject">
                             <option disabled selected hidden [value]="0">Select subject</option>
                             <option value="Enquiry">Enquiry</option>
                             <option value="Feedback">Feedback</option>
@@ -38,7 +41,8 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <input type="email" class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
+                        <input type="email"
+                            class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
                             placeholder="Your Email Address" name="email_id" id="email_id" formControlName="email_id"
                             [ngClass]="{'error-border': contactFormGroup.get('email_id')?.invalid && contactFormGroup.get('email_id')?.touched, 
                             'focus:border-gray-500': contactFormGroup.get('email_id')?.invalid && contactFormGroup.get('email_id')?.touched}">
@@ -52,7 +56,8 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <textarea class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
+                        <textarea
+                            class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
                             placeholder="Your Message" rows="4" name="message" id="message" formControlName="message"
                             [ngClass]="{'error-border': contactFormGroup.get('message')?.invalid && contactFormGroup.get('message')?.touched, 
                             'focus:border-gray-500': contactFormGroup.get('message')?.invalid && contactFormGroup.get('message')?.touched}">
@@ -63,7 +68,9 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="flex flex-col items-end gap-2">
+                        <span class="italic text-gray-400 text-sm" [class.hidden]="contactFormGroup.valid">Fill all the
+                            required fields to enable button</span>
                         <button type="submit"
                             class="bg-primary-color text-white py-3 px-8 rounded-lg hover:bg-primary-hover-color focus:outline-none text-sm float-right disabled:cursor-not-allowed disabled:bg-primary-hover-color"
                             [disabled]="contactFormGroup.invalid">Send

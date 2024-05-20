@@ -13,46 +13,46 @@ export class FooterComponent {
     this.screenWidth = window.innerWidth
   }
 
-  gotoAboutSection() {
-    console.log(this.router.url);
-    if (this.router.url != "/") {
-      this.router.navigate([`/about`],
-        { queryParams: { data: 'comefromfooter' } }
-      );
-    }
-    else {
-      window.scrollTo({
-        top: 1650,
-        behavior: 'smooth'
-      });
-    }
-  }
+  // gotoAboutSection() {
+  //   console.log(this.router.url);
+  //   if (this.router.url != "/") {
+  //     this.router.navigate([`/about`],
+  //       { queryParams: { data: 'comefromfooter' } }
+  //     );
+  //   }
+  //   else {
+  //     window.scrollTo({
+  //       top: 1650,
+  //       behavior: 'smooth'
+  //     });
+  //   }
+  // }
 
-  gotoContactUsSection() {
-    if (this.router.url != "/") {
-      this.router.navigate([`/contact`],
-        { queryParams: { data: 'comefromfooter' } }
-      );
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-    else {
-      if (this.screenWidth < 550) {
-        window.scrollTo({
-          top: 6180,
-          behavior: 'smooth'
-        });
-      }
-      else {
-        window.scrollTo({
-          top: 4700,
-          behavior: 'smooth'
-        });
-      }
-    }
-  }
+  // gotoContactUsSection() {
+  //   if (this.router.url != "/") {
+  //     this.router.navigate([`/contact`],
+  //       { queryParams: { data: 'comefromfooter' } }
+  //     );
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: 'smooth'
+  //     });
+  //   }
+  //   else {
+  //     if (this.screenWidth < 550) {
+  //       window.scrollTo({
+  //         top: 6180,
+  //         behavior: 'smooth'
+  //       });
+  //     }
+  //     else {
+  //       window.scrollTo({
+  //         top: 4700,
+  //         behavior: 'smooth'
+  //       });
+  //     }
+  //   }
+  // }
 
   gotoCustomerReviewSection() {
     if (this.router.url != "/") {
