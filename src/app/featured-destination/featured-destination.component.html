@@ -11,7 +11,7 @@
         <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
         <div class="">
             <div class="owl-carousel featured-destination owl-theme">
-                <div class="item" *ngFor="let item of featuredItems">
+                <div class="item overflow-hidden hover:scale-105 duration-300 p-2 rounded-lg" *ngFor="let item of featuredItems">
                     <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                         <img src={{item.image}} alt="Destination 1" class="w-full h-64 object-cover">
                         <div class="p-6 min-h-[180px] max-h-[180px]">

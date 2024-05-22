@@ -22,9 +22,10 @@ import { EnquiryBarComponent } from './enquiry-bar/enquiry-bar.component';
 import { FaqComponent } from './faq/faq.component';
 import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -43,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeCarouselComponent,
     EnquiryBarComponent,
       FaqComponent,
-      HowToReachSikkimComponent
+      HowToReachSikkimComponent,
+      TourPackagesComponent
    ],
   imports: [
     BrowserModule,

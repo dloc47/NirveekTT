@@ -21,7 +21,7 @@
   <div class="max-w-screen-2xl flex flex-wrap space-x-4 items-center justify-between mx-auto p-4 md:px-14 lg:px-32">
 
     <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="assets/images/nirveek-logo.jpeg" class="h-10" alt="Logo" />
+      <img src="assets/images/nirveek-logo.jpeg" class="h-12" alt="Logo" />
       <span class="flex flex-col justify-start">
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
           Nirveek
@@ -32,10 +32,13 @@
       </span>
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button"
+      <!-- <img class="h-14" src="https://www.pngplay.com/wp-content/uploads/2/Certified-Transparent-File.png" alt=""> -->
+      <img class="h-14 hidden xl:block"
+        src="https://freerangestock.com/sample/60511/certified-stamp-means-promise-ratify-and-authenticate.jpg" alt="">
+      <!-- <button type="button"
         class="hidden xl:block text-white bg-primary-color hover:bg-primary-hover-color focus:ring-4 focus:outline-none 
       focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Enquiry
-        Now</button>
+        Now</button> -->
       <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg
        md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 
        dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
@@ -78,16 +81,21 @@
               <ul class="w-max" *ngFor="let item of destinations">
                 <li>
                   <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <div class="font-semibold">{{item.region}}</div>
+                    <div class="font-semibold">{{ item.region }}</div>
                     <ul class="pt-2">
-                      <li *ngFor="let place of item.places" class="text-sm text-gray-500 dark:text-gray-400 leading-7
-                       hover:pl-1 transition-all ease-in flex items-baseline">
-                        <i class="fa-solid fa-angles-right fa-xs mr-2 text-primary-color"></i>{{place}}
-                      </li>
+                      <ng-container *ngFor="let place of item.places; let i = index">
+                        <li *ngIf="i < 10 || item.showMore" class="text-sm text-gray-500 dark:text-gray-400 leading-7 hover:pl-1 transition-all ease-in flex items-baseline">
+                          <i class="fa-solid fa-angles-right fa-xs mr-2 text-primary-color"></i>{{ place }}
+                        </li>
+                      </ng-container>
                     </ul>
+                    <button *ngIf="shouldShowSeeMoreButton(item)" (click)="toggleSeeMore(item)" class="text-blue-500 hover:text-blue-700">
+                      {{ item.showMore ? 'See less' : 'See more' }}
+                    </button>
                   </a>
                 </li>
               </ul>
+              
             </div>
           </div>
         </li>

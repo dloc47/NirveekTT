@@ -1,0 +1,141 @@
+<section class="section bg-gray-50 py-10">
+
+  <!-- <div class="flex packageHeadingSection">
+    <div class="tourNavigatorHeadingSection border w-1/4 text-center p-4">
+      <h1 class="font-semibold mb-3">Holiday Theme</h1>
+      <div class="contentWrapper bg-green-100 rounded-md p-2 text-left">
+        <ul *ngFor="let theme of holidayTheme" class="flex items-center leading-8">
+          <i class="fa-solid fa-angles-right fa-xs mr-2 text-primary-color"></i>
+          <li>{{theme}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tourContentHeadingSection border w-full p-4">
+      <h1 class="font-semibold mb-3">Selected Holiday Theme</h1>
+      <div class="contentWrapper bg-green-100 rounded-md p-2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, consequuntur ducimus
+          incidunt assumenda at
+          recusandae quas mollitia enim magni modi aliquid odio error necessitatibus adipisci iure explicabo aperiam,
+          dolorem in. Possimus tenetur amet, omnis sapiente deserunt dolorum quasi praesentium ab!</p>
+      </div>
+
+
+      <div class="container my-12 mx-auto px-4 md:px-12">
+        <div class="flex flex-wrap -mx-1 lg:-mx-4">
+
+          <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" *ngFor="let package of packages">
+
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+              <figure class="max-h-64 aspect-square overflow-hidden w-full">
+                <img alt="Placeholder" class="w-full h-full object-cover transition hover:scale-125"
+                  src="{{package.image}}">
+              </figure>
+
+              <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                <h1 class="text-lg">
+                  <a class="no-underline hover:underline text-black" href="#">
+                    {{package.title}}
+                  </a>
+                </h1>
+                <p class="text-gray-500 text-sm">
+                  {{package.duration}}
+                </p>
+              </header>
+
+              <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                <a
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  View / Enquire
+                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9" />
+                  </svg>
+                </a>
+              </footer>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div> -->
+
+  <div class="tourContentHeadingSection border rounded-lg w-full p-4">
+    <h2 class="text-2xl font-semibold mb-6">Attractions</h2>
+    <div class="contentWrapper bg-gray-50 rounded-md p-2">
+      <p>Sikkim, nestled in the Himalayas, is a haven for adventure and nature enthusiasts. The state offers thrilling
+        activities like trekking, river rafting, and hill cycling. Paragliding over stunning landscapes provides an
+        unforgettable aerial view, while the annual flower shows showcase a vibrant array of blooms, including rare
+        orchids and rhododendrons. Wildlife enthusiasts can explore rich biodiversity in its sanctuaries, and serene
+        monasteries offer a glimpse into Sikkim's spiritual heritage. With its unique blend of adventure, natural
+        beauty, and cultural richness, Sikkim promises an unforgettable experience for every traveler.</p>
+    </div>
+
+
+    <div class="container my-8 mx-auto px-4 md:px-12">
+      <div class="flex flex-wrap gap-y-6 lg:gap-0 -mx-1 lg:-mx-4">
+
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" *ngFor="let package of packages">
+
+          <article class="overflow-hidden rounded-lg shadow-lg">
+
+            <figure class="max-h-64 aspect-square overflow-hidden w-full">
+              <img alt="Placeholder" class="w-full h-full object-cover transition hover:scale-125"
+                src="{{package.image}}">
+            </figure>
+
+            <!-- <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+              <h1 class="text-lg">
+                <a class="no-underline hover:underline text-black" href="#">
+                  {{package.title}}
+                </a>
+              </h1>
+              <p class="text-gray-500 text-sm">
+                {{package.duration}}
+              </p>
+            </header> -->
+
+            <header class="leading-tight px-2 md:px-4 pt-2 md:pt-4">
+              <h1 class="text-lg mb-3">
+                <a class="no-underline hover:underline text-black" href="#">
+                  {{package.title}}
+                </a>
+              </h1>
+              <p class="text-gray-500 text-sm flex items-center gap-2">
+                <i class="fa-solid fa-clock text-primary-color"></i>
+                <span>{{package.duration}}</span>
+              </p>
+            </header>
+
+            <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+              <p class="text-gray-800 text-sm flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-primary-color"></i>
+                <span>{{package.region}}</span>
+              </p>
+              <a (click)="gotoItinerary(package)"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </a>
+            </footer>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>

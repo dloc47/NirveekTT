@@ -248,9 +248,4 @@ export class ItineraryService {
       ]
     }
   ];
-  // public goToAbout(data: string) {
-  //   if (data) {
-  //     this.notify.next(data);
-  //   }
-  // }
 }

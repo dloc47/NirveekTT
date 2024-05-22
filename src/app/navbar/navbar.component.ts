@@ -23,27 +23,40 @@ export class NavbarComponent implements OnInit {
   destinations: any[] = [
     {
       region: 'East Sikkim',
-      places: ['Aritar', 'Gangtok', 'Tsogmo', 'Nathula', 'Zuluk', 'Rumtek']
+      places: ['Aritar', 'Gangtok', 'Tsogmo', 'Nathula', 'Zuluk', 'Rumtek'],
+      showMore: false
     },
     {
       region: 'North Sikkim',
-      places: ['Chungthang', 'Lachung', 'Lachen', 'Mangan', 'Singhik', 'Yumthang valley']
+      places: ['Chungthang', 'Lachung', 'Lachen', 'Mangan', 'Singhik', 'Yumthang valley'],
+      showMore: false
     },
     {
       region: 'South Sikkim',
-      places: ['Jorethang', 'Namchi', 'Ravangla']
+      places: ['Jorethang', 'Namchi', 'Ravangla'],
+      showMore: false
     },
     {
       region: 'West Sikkim',
-      places: ['Geyzing', 'Kaluk', 'Legship', 'Pelling', 'Okharey', 'Rinchenpong', 'Uttarey']
+      places: ['Geyzing', 'Kaluk', 'Legship', 'Pelling', 'Okharey', 'Rinchenpong', 'Uttarey'],
+      showMore: false
     },
     {
       region: 'Attractions',
       places: ['Tsongmo Lake', 'Rumtek Monastry', 'Rabdentse Ruins', 'Nathu La Pass', 'Khecheopari Lake', 'Khangchenzonga National Park',
         'Gurudongmar Lake', 'Buddha Park', 'Chardham', 'Barsey Rhododendron Sanctuary', 'Baba Harbahajan Singh Temple'
-      ]
+      ],
+      showMore: false
     }
   ];
+  
+  toggleSeeMore(item: any) {
+    item.showMore = !item.showMore;
+  }
+  
+  shouldShowSeeMoreButton(item: any): boolean {
+    return item.places.length > 10;
+  }
 
 
   // goToHome() {
