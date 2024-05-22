@@ -11,16 +11,18 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReviewsComponent } from './user-reviews/reviews.component';
 import { FaqComponent } from './faq/faq.component';
 import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
+import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent, pathMatch:"full"},
-  {path: "privacypolicy", component: PrivacyPolicyComponent },
   {path: "about", component: AboutUsComponent },
   {path: "contact", component: ContactFormComponent },
   {path: "review", component: ReviewsComponent },
+  {path: "privacypolicy", component: PrivacyPolicyComponent },
   {path: "termsandcondition", component: TermsAndConditionsComponent },
   {path: "bookingandcancellationpolicy", component: BookingAndCancellationPolicyComponent },
   {path: "itinerary", component: ItineraryDetailsComponent },
+  {path: "packages", component: TourPackagesComponent },
   {path: "faq", component: FaqComponent },
   {path: "how-to-reach-sikkim", component: HowToReachSikkimComponent },
   { path: '**', component: PageNotFoundComponent }, // wildcard route for unknown paths - (Add this wildcard to last index, else it will throw an error to known route also)

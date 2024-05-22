@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
 import { ItineraryService } from '../services/itinerary.service';
+import { Dropdown, DropdownOptions } from 'flowbite';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  screenWidth: number = 0
-
-  constructor(private router: Router, private service: ItineraryService) { }
-
-  ngOnInit() {
-    this.screenWidth = window.innerWidth
-  }
-
-  // destinationByPlace : any[] = ["Darjeeling", "Mirik", "Kalimpong", "Gangtok", "Lachung", "Lachen", "Pelling",  "Namchi", "Ravangla"];
-  // destinationByTheme : any[] = [];
+  screenWidth: number = 0;
+  private $targetEl!: HTMLElement | null;
+  private $triggerEl!: HTMLElement | null;
+  private dropdown: Dropdown | null = null;
+  public options: DropdownOptions;
+  public instanceOptions: { id: string; override: boolean };
 
   destinations: any[] = [
     {
@@ -43,47 +39,73 @@ export class NavbarComponent implements OnInit {
     },
     {
       region: 'Attractions',
-      places: ['Tsongmo Lake', 'Rumtek Monastry', 'Rabdentse Ruins', 'Nathu La Pass', 'Khecheopari Lake', 'Khangchenzonga National Park',
-        'Gurudongmar Lake', 'Buddha Park', 'Chardham', 'Barsey Rhododendron Sanctuary', 'Baba Harbahajan Singh Temple'
+      places: [
+        'Tsongmo Lake', 'Rumtek Monastry', 'Rabdentse Ruins', 'Nathu La Pass', 'Khecheopari Lake',
+        'Khangchenzonga National Park', 'Gurudongmar Lake', 'Buddha Park', 'Chardham',
+        'Barsey Rhododendron Sanctuary', 'Baba Harbahajan Singh Temple'
       ],
       showMore: false
     }
   ];
-  
-  toggleSeeMore(item: any) {
-    item.showMore = !item.showMore;
+
+  constructor(private router: Router, private service: ItineraryService) {
+    this.options = { };
+    
+    this.instanceOptions = {
+      id: 'dropdownNavbarMenu',
+      override: true
+    };
   }
-  
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+    this.$targetEl = document.getElementById('dropdownNavbarMenu');
+    this.$triggerEl = document.getElementById('dropdownNavbarBtn');
+
+    if (this.$targetEl && this.$triggerEl) {
+      this.initializeDropdown();
+    }
+  }
+
   shouldShowSeeMoreButton(item: any): boolean {
     return item.places.length > 10;
   }
 
+  redirectToPackages(): void {
+    this.router.navigate(['/packages']);
+    this.closeDropDownManually();
+  }
 
-  // goToHome() {
-  //   if (this.router.url == "/") {
-  //     this.service.goToAbout("home");
-  //   }
-  //   else {
-  //     this.router.navigate(["/"]);
-  //   }
-  // }
+  closeDropDownManually() {
+    if (this.dropdown) {
+      this.dropdown.hide();
+    }
+  }
 
-  // gotoContactUs() {
-  //   if (this.router.url == "/") {
-  //     this.service.goToAbout("contact");
-  //   }
-  //   else {
-  //     this.router.navigate(["/contact"]);
-  //   }
-  // }
-  
+  private initializeDropdown(): void {
+    if (this.$targetEl && this.$triggerEl) {
+      this.dropdown = new Dropdown(this.$targetEl, this.$triggerEl, this.options, this.instanceOptions);
 
-  // goToAbout() {
-  //   if (this.router.url == "/") {
-  //     this.service.goToAbout("about");
-  //   }
-  //   else {
-  //     this.router.navigate(["/about"]);
-  //   }
-  // }
+      this.$triggerEl.addEventListener('click', () => {
+        if (this.$targetEl) {
+          this.$targetEl.classList.toggle('show');
+          if (this.options.onToggle) {
+            this.options.onToggle(this.dropdown!);
+          }
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (this.$targetEl && !this.$targetEl.contains(event.target as Node) &&
+          !this.$triggerEl?.contains(event.target as Node)) {
+          this.$targetEl.classList.remove('show');
+          if (this.options.onHide) {
+            this.options.onHide(this.dropdown!);
+          }
+        }
+      });
+    }
+  }
+
+
 }

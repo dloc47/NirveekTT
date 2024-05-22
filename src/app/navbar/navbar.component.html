@@ -65,7 +65,7 @@
         </li>
 
         <li>
-          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" data-dropdown-trigger="hover" class="flex items-center justify-between 
+          <button id="dropdownNavbarBtn" data-dropdown-offset-distance="28" data-dropdown-toggle="dropdownNavbarMenu" data-dropdown-trigger="click" class="flex items-center justify-between 
           w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-primary-color md:p-0 md:w-auto
            dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 
            md:dark:hover:bg-transparent">Destinations & Attractions
@@ -74,28 +74,28 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="m1 1 4 4 4-4" />
             </svg></button>
-          <div id="dropdownNavbar"
+          <div id="dropdownNavbarMenu"
             class="subMenuList h-max lg:w-max absolute top-full left-1/2 -translate-x-1/2 shadow-md bg-white hidden p-1">
             <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 
               md:px-6 overflow-y-scroll md:overflow-y-auto">
               <ul class="w-max" *ngFor="let item of destinations">
                 <li>
-                  <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <div class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                     <div class="font-semibold">{{ item.region }}</div>
                     <ul class="pt-2">
                       <ng-container *ngFor="let place of item.places; let i = index">
-                        <li *ngIf="i < 10 || item.showMore" class="text-sm text-gray-500 dark:text-gray-400 leading-7 hover:pl-1 transition-all ease-in flex items-baseline">
+                        <li *ngIf="i < 10 || item.showMore"
+                          class="text-sm text-gray-500 dark:text-gray-400 leading-7 hover:pl-1 transition-all ease-in flex items-baseline cursor-pointer">
                           <i class="fa-solid fa-angles-right fa-xs mr-2 text-primary-color"></i>{{ place }}
                         </li>
                       </ng-container>
                     </ul>
-                    <button *ngIf="shouldShowSeeMoreButton(item)" (click)="toggleSeeMore(item)" class="text-blue-500 hover:text-blue-700">
-                      {{ item.showMore ? 'See less' : 'See more' }}
+                    <button *ngIf="shouldShowSeeMoreButton(item)" class="text-blue-500 hover:text-blue-700">
+                      <a (click)="redirectToPackages();"> See More </a>
                     </button>
-                  </a>
+                  </div>
                 </li>
               </ul>
-              
             </div>
           </div>
         </li>
