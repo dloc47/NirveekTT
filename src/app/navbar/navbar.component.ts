@@ -19,22 +19,22 @@ export class NavbarComponent implements OnInit {
   destinations: any[] = [
     {
       region: 'East Sikkim',
-      places: ['Aritar', 'Gangtok', 'Tsogmo', 'Nathula', 'Zuluk', 'Rumtek'],
+      places: ['Aritar', 'Gangtok', 'Tsogmo', 'Nathula', 'Zuluk'],
       showMore: false
     },
     {
       region: 'North Sikkim',
-      places: ['Chungthang', 'Lachung', 'Lachen', 'Mangan', 'Singhik', 'Yumthang valley'],
+      places: ['Lachung', 'Lachen', 'Dzongu'],
       showMore: false
     },
     {
       region: 'South Sikkim',
-      places: ['Jorethang', 'Namchi', 'Ravangla'],
+      places: ['Namchi', 'Ravangla', 'Rabong'],
       showMore: false
     },
     {
       region: 'West Sikkim',
-      places: ['Geyzing', 'Kaluk', 'Legship', 'Pelling', 'Okharey', 'Rinchenpong', 'Uttarey'],
+      places: ['Geyzing', 'Kaluk', 'Legship', 'Pelling', 'Okharey', 'Rinchenpong', 'Uttarey', 'Dentam', 'Hee-Bermoik', 'Yuksom'],
       showMore: false
     },
     {
@@ -49,8 +49,8 @@ export class NavbarComponent implements OnInit {
   ];
 
   constructor(private router: Router, private service: ItineraryService) {
-    this.options = { };
-    
+    this.options = {};
+
     this.instanceOptions = {
       id: 'dropdownNavbarMenu',
       override: true

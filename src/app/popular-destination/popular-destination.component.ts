@@ -245,6 +245,375 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
   //     ]
   //   }
   // ];
+
+
+  popularDestination2: any = [
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "3 Nights, 4 Days",
+      destinationTitle: "Gangtok Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "4 Nights, 5 Days",
+      destinationTitle: "Gangtok Lachung Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "3 Nights, 4 Days",
+      destinationTitle: "Silk Route",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "3 Nights, 4 Days",
+      destinationTitle: "Darjeeling Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "4 Nights, 5 Days",
+      destinationTitle: "Varsey Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "5 Nights, 6 Days",
+      destinationTitle: "Gangtok Pelling Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "2 Nights, 3 Days",
+      destinationTitle: "Lachen Lachung Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "7 Nights, 8 Days",
+      destinationTitle: "Gangtok Pelling Dajeeling Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "3 Nights, 4 Days",
+      destinationTitle: "Uttarey Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "3 Nights, 4 Days",
+      destinationTitle: "Dzongu Tour",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+    {
+      destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
+      duration: "11 Nights, 12 Days",
+      destinationTitle: "Sikkim Darjeeling Kalimpong",
+      destinationDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.",
+      touritinerary: [
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+        },
+        {
+          day: "Arrival Kathmandu & transfer to Pokhra",
+          description: "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+        }
+      ],
+      including: [
+        "Accommodation as per itinerary.",
+        "All transfers & sight seeings as per itinerary.",
+        "Driver Allowance, toll, parking fee, Night halt charges, inter- state permit.",
+        "A dedicated Tour Coordinator for the entire trip."
+      ],
+      exclusion: [
+        "Any other services or meals which are not mentioned in the above “Includes” section.",
+        "Expense of personal nature such as tips, laundry, telephones, beverages etc",
+        "Entry fee for all monuments and places of interest if any",
+        "Airfares and Train ticket charges if any",
+        "Any other items not mentioned in ‘Cost Includes’"
+      ]
+    },
+  ]
+
+
   ngOnInit() {
   }
   ngAfterViewInit(): void {
@@ -252,7 +621,7 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
       loop: true,
       items: 4,
       margin: 25,
-      autoplay: true,
+      autoplay: false,
       autoplayTimeout: 2000,
       autoplayHoverPause: true,
       nav: false,
