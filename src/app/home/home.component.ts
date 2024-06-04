@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit, Injectable } from '@angular/core';
-import { ItineraryService } from '../services/itinerary.service';
 import { Subscription } from 'rxjs';
 
 declare var $: any;
@@ -12,11 +11,11 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
   private triggerFunctionSubscription: Subscription = Subscription.EMPTY;
-  constructor(private itineraryService: ItineraryService) { 
-    this.triggerFunctionSubscription = this.itineraryService.notifyObservable$.subscribe((res:any) => {
-      console.log(res);
-      this.scrollToItinerarySection(res);
-    });
+  constructor() { 
+    // this.triggerFunctionSubscription = this.itineraryService.notifyObservable$.subscribe((res:any) => {
+    //   console.log(res);
+    //   this.scrollToItinerarySection(res);
+    // });
   }
 
   ngOnInit() {

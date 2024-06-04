@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InstanceOptions, TabItem, Tabs, TabsInterface, TabsOptions } from 'flowbite';
-import { ItineraryService } from '../services/itinerary.service';
 
 @Component({
   selector: 'app-itinerary-details',
@@ -10,11 +9,21 @@ import { ItineraryService } from '../services/itinerary.service';
 })
 export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
 
-  touritinerary: any = {}
-  currentItenary: any;
-  count = 0
+  tourData: any;
+  touritinerary: any;
 
-  constructor(private route: ActivatedRoute, private itineraryService: ItineraryService) { }
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => { //Getting data from other components, 'popular-destination' for now..
+      if (window.history.state && window.history.state.data) {
+        this.tourData = window.history.state.data;
+        this.touritinerary = this.tourData.touritinerary;
+        
+      } else {
+        // Handle case when navigating directly to this component
+      }
+    });
+    // console.log(this.tourData);
+  }
 
   ngAfterViewInit(): void {
     const tabsElement: HTMLElement | any = document.getElementById('default-styled-tab');
@@ -55,9 +64,6 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
         'text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500',
       inactiveClasses:
         'text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300',
-      onShow: () => {
-        console.log('tab is shown');
-      },
     };
 
     // instance options with default values
@@ -74,22 +80,6 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    this.route.queryParams.subscribe((res: any) => {
-      console.log(res);
-      console.log(this.itineraryService.popularDestination);
-      console.log(this.itineraryService.popularDestination[res.destinationId-1]);
-      
-      this.count++
-      this.currentItenary = this.itineraryService.popularDestination[res.destinationId-1];
-      // this.touritinerary = JSON.parse(res.touritinerary);
-      this.touritinerary = this.currentItenary.touritinerary;
-      // window.location.reload();
-    })
-
   }
 
 }

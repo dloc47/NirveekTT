@@ -10,11 +10,11 @@
 
 
   <div class="owl-carousel popular-destination owl-theme">
-    <div *ngFor="let item of popularDestination2" class="item">
+    <div *ngFor="let destination of popularDestination" class="item">
       <div
         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
         <a>
-          <img class="rounded-t-lg h-48 object-cover" src={{item.destinationImage}} alt="" />
+          <img class="rounded-t-lg h-48 object-cover" src={{destination.destinationImage}} alt="" />
         </a>
         <!-- <div class="priceLabel bg-orange-400 rounded-md text-white w-max px-2 py-1 absolute top-[10px] right-[10px]">
           <span class="font-semibold">₹ 15,000 <span class="text-xs font-normal">/ per person</span></span>
@@ -23,7 +23,7 @@
         <div class="w-full flex justify-end relative">
           <p
             class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
-            <i class="fa-solid fa-clock"></i> {{item.duration}}
+            <i class="fa-solid fa-clock"></i> {{destination.duration}}
           </p>
         </div>
 
@@ -31,18 +31,18 @@
           <a href="#">
             <h5
               class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto text-nowrap">
-              {{item.destinationTitle}}</h5>
+              {{destination.destinationTitle}}</h5>
           </a>
         </div>
 
         <div class="packageDescription px-5">
           <p
             class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-pretty overflow-hidden text-ellipsis max-h-28">
-            {{item.destinationDescription}}
+            {{destination.destinationDescription}}
           </p>
         </div>
         <div class="packageBtns p-5 pt-0 flex space-x-3 justify-end">
-          <a (click)="gotoItinerary(item)"
+          <a (click)="redirectToItinerary(destination)"
             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             View / Enquire
             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

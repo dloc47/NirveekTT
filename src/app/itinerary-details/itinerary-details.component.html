@@ -2,13 +2,13 @@
   <div class="grid lg:grid-cols-3 lg:gap-8 lg:justify-items-end">
     <div class="itinerary-details lg:col-span-2 w-full pt-12 lg:pt-0">
 
-      <h2 class="text-2xl font-semibold">{{currentItenary.destinationTitle}}</h2>
+      <h2 class="text-2xl font-semibold">{{tourData.destinationTitle}}</h2>
 
       <div class="packageOverviewDetails grid grid-cols-3 my-6">
         <p class="font-semibold text-gray-700 text-xs">Duration <span
-            class="text-primary-color">{{currentItenary.duration}}</span></p>
+            class="text-primary-color">{{tourData.duration}}</span></p>
         <p class="font-semibold text-gray-700 text-xs">Location <span
-            class="text-primary-color">{{currentItenary.destinationTitle}}</span>
+            class="text-primary-color">{{tourData.destinationTitle}}</span>
         </p>
         <p class="font-semibold text-gray-700 text-xs">Rating <span class="text-primary-color">Stars</span></p>
       </div>
@@ -56,11 +56,11 @@
 
         <div class=" p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-overview" role="tabpanel"
           aria-labelledby="overview-tab">
-          <img src={{currentItenary.destinationImage}} alt="img" loading="lazy" class="mb-4">
+          <img src={{tourData.destinationImage}} alt="img" loading="lazy" class="mb-4" onload="this.style.opacity = 1;">
           <!-- <strong class="font-medium text-gray-800 dark:text-white">{{currentItenary.destinationTitle}}</strong> -->
           <strong class="font-medium text-primary-color dark:text-white">Overview</strong>
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            {{currentItenary.destinationDescription}}
+            {{tourData.destinationDescription}}
           </p>
         </div>
 
@@ -86,7 +86,7 @@
           aria-labelledby="inclusion-tab">
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Includes</p>
           <ul class="inclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6" *ngFor="let item of currentItenary.including">
+            <li class="flex items-center gap-6" *ngFor="let item of tourData.including">
               <i class="fa fa-check-double fa-sm text-primary-color"></i>
               <span>{{item}}</span>
             </li>
@@ -97,7 +97,7 @@
           aria-labelledby="exclusion-tab">
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Excludes</p>
           <ul class="exclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6" *ngFor="let item of currentItenary.exclusion">
+            <li class="flex items-center gap-6" *ngFor="let item of tourData.exclusion">
               <i class="fa-solid fa-xmark fa-sm text-red-600"></i>
               <span>{{item}}</span>
             </li>

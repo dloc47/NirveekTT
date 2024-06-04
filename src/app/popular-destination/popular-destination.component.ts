@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ItineraryService } from '../services/itinerary.service';
 declare var $: any;
 
 @Component({
@@ -10,8 +9,8 @@ declare var $: any;
 })
 export class PopularDestinationComponent implements OnInit, AfterViewInit {
 
-  constructor(private router: Router, private itineraryService: ItineraryService) { }
-  popularDestination: any = this.itineraryService.popularDestination;
+  constructor(private router: Router) { }
+  // popularDestination: any = this.itineraryService.popularDestination;
   // popularDestination: any = [
   //   {
   //     destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
@@ -247,7 +246,7 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
   // ];
 
 
-  popularDestination2: any = [
+  popularDestination: any = [
     {
       destinationImage: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Refresh-yourself-at-these-places-to-visit-in-Sikkim-Hero-Image.jpg",
       duration: "3 Nights, 4 Days",
@@ -645,25 +644,34 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
       }
     })
   }
-  gotoItinerary(event: any) {
-    console.log(event);
 
-    this.router.navigate([`/itinerary`],
-      {
-        queryParams:
-        {
-          // test:"1",
-          // destinationDescription: event.destinationDescription,
-          // destinationImage: event.destinationImage,
-          // destinationTitle: event.destinationTitle,
-          // duration: event.duration,
-          // touritinerary: JSON.stringify(event.touritinerary),
-          // including: event.including,
-          // exclusion: event.exclusion
-          destinationId: event.destinationId
-        }
-      }
-    );
+
+  // gotoItinerary(event: any) {
+  //   console.log(event);
+
+  //   this.router.navigate([`/itinerary`],
+  //     {
+  //       queryParams:
+  //       {
+  //         // test:"1",
+  //         // destinationDescription: event.destinationDescription,
+  //         // destinationImage: event.destinationImage,
+  //         // destinationTitle: event.destinationTitle,
+  //         // duration: event.duration,
+  //         // touritinerary: JSON.stringify(event.touritinerary),
+  //         // including: event.including,
+  //         // exclusion: event.exclusion
+  //         destinationId: event.destinationId
+  //       }
+  //     }
+  //   );
+  // }
+
+  redirectToItinerary(destination: any) {
+    // Navigate to itinerary-details component with specific data
+    console.log(destination);
+    
+    this.router.navigate(['/itinerary'], { state: { data: destination } });
   }
 
 }

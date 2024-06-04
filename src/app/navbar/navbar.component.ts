@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ItineraryService } from '../services/itinerary.service';
 import { Dropdown, DropdownOptions } from 'flowbite';
 
 @Component({
@@ -48,7 +47,7 @@ export class NavbarComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private service: ItineraryService) {
+  constructor(private router: Router) {
     this.options = {};
 
     this.instanceOptions = {
