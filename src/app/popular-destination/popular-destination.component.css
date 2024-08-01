@@ -1,6 +1,6 @@
 
 .owl-carousel .item{
-    height: 28rem;
+    max-height: 26rem;
     max-width: 20rem;
     margin: auto;
 }
@@ -9,5 +9,13 @@
     height: 100%;
 }
 
+.packageDescription {
+    max-height: 7rem; /* Adjust this height as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show before truncating */
+    -webkit-box-orient: vertical;
+}
 
   
