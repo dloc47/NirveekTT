@@ -1,198 +1,352 @@
 <section class="section py-8">
   <div class="grid lg:grid-cols-3 lg:gap-8 lg:justify-items-end">
     <div class="itinerary-details lg:col-span-2 w-full pt-12 lg:pt-0">
-
-      <h2 class="text-2xl font-semibold">{{tourData.destinationTitle}}</h2>
+      <h2 class="text-2xl font-semibold">{{ tourData.destinationTitle }}</h2>
 
       <div class="packageOverviewDetails grid grid-cols-3 my-6">
-        <p class="font-semibold text-gray-700 text-xs">Duration <span
-            class="text-primary-color">{{tourData.duration}}</span></p>
-        <p class="font-semibold text-gray-700 text-xs">Location <span
-            class="text-primary-color">{{tourData.destinationTitle}}</span>
+        <p class="font-semibold text-gray-700 text-xs">
+          Duration
+          <span class="text-primary-color">{{ tourData.duration }}</span>
         </p>
-        <p class="font-semibold text-gray-700 text-xs">Rating <span class="text-primary-color">Stars</span></p>
+        <p class="font-semibold text-gray-700 text-xs">
+          Location
+          <span class="text-primary-color">{{
+            tourData.destinationTitle
+          }}</span>
+        </p>
+        <p class="font-semibold text-gray-700 text-xs">
+          Rating <span class="text-primary-color">Stars</span>
+        </p>
       </div>
 
-
-
       <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
+        <ul
+          class="flex flex-wrap -mb-px text-sm font-medium text-center"
+          id="default-styled-tab"
           data-tabs-toggle="#default-styled-tab-content"
           data-tabs-active-classes="text-primary-color font-bold text-md border-b-[3px] hover:text-primary-hover-color dark:text-blue-500 dark:hover:text-blue-500 border-primary-color hover:border-primary-hover-color dark:border-blue-500"
           data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
-          role="tablist">
+          role="tablist"
+        >
           <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="overview" data-tabs-target="#styled-overview"
-              type="button" role="tab" aria-controls="overview" aria-selected="false">Overview</button>
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg"
+              id="overview"
+              data-tabs-target="#styled-overview"
+              type="button"
+              role="tab"
+              aria-controls="overview"
+              aria-selected="false"
+            >
+              Overview
+            </button>
           </li>
           <li class="me-2" role="presentation">
             <button
               class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="itinerary-styled-tab" data-tabs-target="#styled-itinerary" type="button" role="tab"
-              aria-controls="itinerary" aria-selected="false">Tour Itinerary</button>
+              id="itinerary-styled-tab"
+              data-tabs-target="#styled-itinerary"
+              type="button"
+              role="tab"
+              aria-controls="itinerary"
+              aria-selected="false"
+            >
+              Tour Itinerary
+            </button>
           </li>
           <li class="me-2" role="presentation">
             <button
               class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="inclusion-styled-tab" data-tabs-target="#styled-inclusion" type="button" role="tab"
-              aria-controls="inclusion" aria-selected="false">Inclusion</button>
+              id="inclusion-styled-tab"
+              data-tabs-target="#styled-inclusion"
+              type="button"
+              role="tab"
+              aria-controls="inclusion"
+              aria-selected="false"
+            >
+              Inclusion
+            </button>
           </li>
           <li class="me-2" role="presentation">
             <button
               class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="exclusion-styled-tab" data-tabs-target="#styled-exclusion" type="button" role="tab"
-              aria-controls="exclusion" aria-selected="false">Exclusion</button>
+              id="exclusion-styled-tab"
+              data-tabs-target="#styled-exclusion"
+              type="button"
+              role="tab"
+              aria-controls="exclusion"
+              aria-selected="false"
+            >
+              Exclusion
+            </button>
           </li>
           <li role="presentation">
             <button
               class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="policy-styled-tab" data-tabs-target="#styled-policy" type="button" role="tab" aria-controls="policy"
-              aria-selected="false">Policy</button>
+              id="policy-styled-tab"
+              data-tabs-target="#styled-policy"
+              type="button"
+              role="tab"
+              aria-controls="policy"
+              aria-selected="false"
+            >
+              Policy
+            </button>
           </li>
         </ul>
       </div>
 
       <div id="default-styled-tab-content">
-
-        <div class=" p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-overview" role="tabpanel"
-          aria-labelledby="overview-tab">
-          <img src={{tourData.destinationImage}} alt="img" loading="lazy" class="mb-4" onload="this.style.opacity = 1;">
+        <div
+          class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-overview"
+          role="tabpanel"
+          aria-labelledby="overview-tab"
+        >
+          <img
+            src="{{ tourData.destinationImage }}"
+            alt="img"
+            loading="lazy"
+            class="mb-4"
+            onload="this.style.opacity = 1;"
+          />
           <!-- <strong class="font-medium text-gray-800 dark:text-white">{{currentItenary.destinationTitle}}</strong> -->
-          <strong class="font-medium text-primary-color dark:text-white">Overview</strong>
+          <strong class="font-medium text-primary-color dark:text-white"
+            >Overview</strong
+          >
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            {{tourData.destinationDescription}}
+            {{ tourData.destinationDescription }}
           </p>
         </div>
 
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-itinerary" role="tabpanel"
-          aria-labelledby="itinerary-tab">
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Daily Itinerary</p>
-          <ol class="relative border-s border-gray-200 dark:border-gray-700 left-4">
-            <li class="ms-6 my-8 space-y-2" *ngFor="let item of touritinerary; let i = index">
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-itinerary"
+          role="tabpanel"
+          aria-labelledby="itinerary-tab"
+        >
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Daily Itinerary
+          </p>
+          <ol
+            class="relative border-s border-gray-200 dark:border-gray-700 left-4"
+          >
+            <li
+              class="ms-6 my-8 space-y-2"
+              *ngFor="let item of touritinerary; let i = index"
+            >
               <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                class="absolute flex items-center justify-center w-6 h-6 bg-green-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"
+              >
                 <i class="fa-solid fa-location-dot"></i>
               </span>
-              <strong class="flex font-medium text-gray-800 dark:text-white ms-4">
-                <span class="text-primary-color">Day {{i+1}}</span>
-                - {{item.day}}
+              <strong
+                class="flex font-medium text-gray-800 dark:text-white ms-4"
+              >
+                <span class="text-primary-color">Day {{ i + 1 }}</span>
+                - {{ item.day }}
               </strong>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400 ms-4">{{item.description}}</p>
+              <p
+                class="text-base font-normal text-gray-500 dark:text-gray-400 ms-4"
+              >
+                {{ item.description }}
+              </p>
             </li>
           </ol>
         </div>
 
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-inclusion" role="tabpanel"
-          aria-labelledby="inclusion-tab">
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Includes</p>
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-inclusion"
+          role="tabpanel"
+          aria-labelledby="inclusion-tab"
+        >
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Package Includes
+          </p>
           <ul class="inclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6" *ngFor="let item of tourData.including">
+            <li
+              class="flex items-center gap-6"
+              *ngFor="let item of tourData.including"
+            >
               <i class="fa fa-check-double fa-sm text-primary-color"></i>
-              <span>{{item}}</span>
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
 
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-exclusion" role="tabpanel"
-          aria-labelledby="exclusion-tab">
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Package Excludes</p>
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-exclusion"
+          role="tabpanel"
+          aria-labelledby="exclusion-tab"
+        >
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Package Excludes
+          </p>
           <ul class="exclusionBullets my-8 space-y-6">
-            <li class="flex items-center gap-6" *ngFor="let item of tourData.exclusion">
+            <li
+              class="flex items-center gap-6"
+              *ngFor="let item of tourData.exclusion"
+            >
               <i class="fa-solid fa-xmark fa-sm text-red-600"></i>
-              <span>{{item}}</span>
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
 
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-policy" role="tabpanel"
-          aria-labelledby="policy-tab">
-
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Terms & Conditions</p>
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-policy"
+          role="tabpanel"
+          aria-labelledby="policy-tab"
+        >
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Terms & Conditions
+          </p>
           <div class="conditions my-8">
-            <p class="font-medium text-gray-800 dark:text-white">Payment Terms & Methods :</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">50% Advance Percentage of total booking amount</p>
+            <p class="font-medium text-gray-800 dark:text-white">
+              Payment Terms & Methods :
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              50% Advance Percentage of total booking amount
+            </p>
           </div>
 
           <div class="conditions">
             <p class="font-semibold">Cancellation & Refund Policy :</p>
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-1">Upon cancellation, refund will be made after
-              deducting the Retention Amount.
-              Retention Amount varies as per the number of days left before your package start date.
-              Refund will be made within 15 working days from the date of receipt of the cancellation.</p>
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-1">
+              Upon cancellation, refund will be made after deducting the
+              Retention Amount. Retention Amount varies as per the number of
+              days left before your package start date. Refund will be made
+              within 15 working days from the date of receipt of the
+              cancellation.
+            </p>
           </div>
 
           <div class="conditions my-8">
-            <p class="font-medium text-gray-800 dark:text-white">Other Terms & Conditions :</p>
-            <p class="font-medium text-gray-800 dark:text-white mt-3">Terms & Condition :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">Asian Holidays reserves the right to
-                re-arrange itinerary to Suit hotel availability without
-                changing the total number of days in each destination and without
-                compromising any services. The vehicle used is AC/NAC and is available for point to point services only
-                and is not at disposal. Clients are requested to follow the itinerary.</span>
+            <p class="font-medium text-gray-800 dark:text-white">
+              Other Terms & Conditions :
             </p>
-            <p class="font-medium text-gray-800 dark:text-white mt-3">Payment Terms :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">50% at the time of booking and
-                balance 7 days prior travel date. All bookings are on special corporate non-refundable
-                basis.</span>
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              Terms & Condition :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >Asian Holidays reserves the right to re-arrange itinerary to
+                Suit hotel availability without changing the total number of
+                days in each destination and without compromising any services.
+                The vehicle used is AC/NAC and is available for point to point
+                services only and is not at disposal. Clients are requested to
+                follow the itinerary.</span
+              >
             </p>
-            <p class="font-medium text-gray-800 dark:text-white mt-3">Confirmation & Rate :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">No bookings are guaranteed without
-                advance payment and Rates are subject to availability.</span>
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              Payment Terms :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >50% at the time of booking and balance 7 days prior travel
+                date. All bookings are on special corporate non-refundable
+                basis.</span
+              >
             </p>
-            <p class="font-medium text-gray-800 dark:text-white mt-3">Information Needed :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">Accurate Arrival and Departure timing
-                to
-                be informed in advance</span>
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              Confirmation & Rate :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >No bookings are guaranteed without advance payment and Rates
+                are subject to availability.</span
+              >
             </p>
-            <hr class="w-4/5 h-[0.15rem] mx-auto my-4 bg-green-300 border-0 rounded md:my-10 dark:bg-gray-700">
-            <p class="font-medium text-gray-800 dark:text-white mt-3">For More details log-in to :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">website.domain</span>
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              Information Needed :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >Accurate Arrival and Departure timing to be informed in
+                advance</span
+              >
             </p>
-            <p class="font-medium text-gray-800 dark:text-white mt-3">You can call at :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">+91 7407363783 / 7602530248</span>
+            <hr
+              class="w-4/5 h-[0.15rem] mx-auto my-4 bg-green-300 border-0 rounded md:my-10 dark:bg-gray-700"
+            />
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              For More details log-in to :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >website.domain</span
+              >
             </p>
-            <p class="font-medium text-gray-800 dark:text-white mt-3">Email your query at :
-              <span class="text-base text-gray-500 dark:text-gray-400 font-normal">nirveektoursntt@gmail.com</span>
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              You can call at :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >+91 7407363783 / 7602530248</span
+              >
+            </p>
+            <p class="font-medium text-gray-800 dark:text-white mt-3">
+              Email your query at :
+              <span
+                class="text-base text-gray-500 dark:text-gray-400 font-normal"
+                >nirveektoursntt@gmail.com</span
+              >
             </p>
           </div>
         </div>
       </div>
-
     </div>
 
     <div
-      class="contactDetails w-full space-y-8 md:space-y-0 md:flex md:space-x-8 lg:block lg:space-x-0 lg:space-y-8 mt-8 lg:mt-44 mb-12">
-
-      <div class="block w-full lg:max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800
-         dark:border-gray-700 dark:hover:bg-gray-700 text-center">
-        <h5 class="mb-2 text-lg font-semibold tracking-tight text-gray-900 dark:text-white uppercase">Enquire about the
-          package</h5>
-        <a href="#">
-          <button type="button"
-            class="text-white bg-primary-color hover:bg-primary-hover-color focus:ring-4 focus:ring-green-300 font-medium rounded-md 
-          text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-full">
+      class="contactDetails w-full space-y-8 md:space-y-0 md:flex md:space-x-8 lg:block lg:space-x-0 lg:space-y-8 mt-8 lg:mt-44 mb-12"
+    >
+      <div
+        class="block w-full lg:max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-center"
+      >
+        <h5
+          class="mb-2 text-lg font-semibold tracking-tight text-gray-900 dark:text-white uppercase"
+        >
+          Enquire about the package
+        </h5>
+        <!-- <a
+          href="https://wa.me/917407363783?text=Hi!%20I%20came%20from%20website..."
+          target="_blank"
+        > -->
+        <a
+          [href]="'https://wa.me/917407363783?text=' + whatsappText"
+          target="_blank"
+        >
+          <button
+            type="button"
+            class="text-white bg-primary-color hover:bg-primary-hover-color focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-full"
+          >
             Enquire Now <i class="ms-1 fa-brands fa-whatsapp fa-lg"></i>
           </button>
         </a>
       </div>
 
-      <div class="block w-full lg:max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800
-         dark:border-gray-700 dark:hover:bg-gray-700 text-center">
-        <h5 class="mb-2 text-lg font-semibold tracking-tight text-gray-900 dark:text-white uppercase">Have a question?
+      <div
+        class="block w-full lg:max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-center"
+      >
+        <h5
+          class="mb-2 text-lg font-semibold tracking-tight text-gray-900 dark:text-white uppercase"
+        >
+          Have a question?
         </h5>
         <div class="flex items-center justify-center mb-2">
           <div class="callIcon">
             <i class="fa-solid fa-phone text-primary-color fa-2xl"></i>
           </div>
           <div class="contactParagraph">
-            <p class="ml-2 text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-              acquisitions</p>
+            <p class="ml-2 text-gray-700 dark:text-gray-400">
+              Contact us to learn more about this package or to customize your
+              itinerary:
+            </p>
           </div>
         </div>
-        <p class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">+91 - 7407363783</p>
+        <p
+          class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white"
+        >
+          +91 - 7407363783 / 7602530248
+        </p>
       </div>
-
     </div>
-
   </div>
 </section>

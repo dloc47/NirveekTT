@@ -1,32 +1,54 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { InstanceOptions, TabItem, Tabs, TabsInterface, TabsOptions } from 'flowbite';
+import { ActivatedRoute, Router } from '@angular/router';
+import {
+  InstanceOptions,
+  TabItem,
+  Tabs,
+  TabsInterface,
+  TabsOptions,
+} from 'flowbite';
 
 @Component({
   selector: 'app-itinerary-details',
   templateUrl: './itinerary-details.component.html',
-  styleUrls: ['./itinerary-details.component.css']
+  styleUrls: ['./itinerary-details.component.css'],
 })
 export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
-
   tourData: any;
   touritinerary: any;
+  whatsappText: string = '';
 
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(params => { //Getting data from other components, 'popular-destination' for now..
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.params.subscribe((params) => {
+      //Getting data from other components, 'popular-destination' for now..
       if (window.history.state && window.history.state.data) {
         this.tourData = window.history.state.data;
         this.touritinerary = this.tourData.touritinerary;
-        
+        // console.log(this.tourData);
+
+        // Set the WhatsApp text dynamically
+        if (
+          this.tourData &&
+          this.tourData.destinationTitle &&
+          this.tourData.duration
+        ) {
+          this.whatsappText = `Hi!%20I%20came%20from%20the%20website%20regarding%20the%20${encodeURIComponent(
+            this.tourData.destinationTitle
+          )}%20package%20for%20${encodeURIComponent(this.tourData.duration)}.`;
+        } else {
+          this.whatsappText = `Hi!%20I%20came%20from%20the%20website.`;
+        }
       } else {
         // Handle case when navigating directly to this component
+        this.router.navigate(['/error'], { queryParams: { message: 'Data not found.' } });
       }
     });
     // console.log(this.tourData);
   }
 
   ngAfterViewInit(): void {
-    const tabsElement: HTMLElement | any = document.getElementById('default-styled-tab');
+    const tabsElement: HTMLElement | any =
+      document.getElementById('default-styled-tab');
 
     // create an array of objects with the id, trigger element (eg. button), and the content element
     const tabElements: TabItem[] | any = [
@@ -54,7 +76,7 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
         id: 'policy-styled-tab',
         triggerEl: document.querySelector('#policy-styled-tab'),
         targetEl: document.querySelector('#styled-policy'),
-      }
+      },
     ];
 
     // options with default values
@@ -69,17 +91,19 @@ export class ItineraryDetailsComponent implements OnInit, AfterViewInit {
     // instance options with default values
     const instanceOptions: InstanceOptions = {
       id: 'default-styled-tab',
-      override: true
+      override: true,
     };
 
-
-    const tabs: TabsInterface = new Tabs(tabsElement, tabElements, options, instanceOptions);
+    const tabs: TabsInterface = new Tabs(
+      tabsElement,
+      tabElements,
+      options,
+      instanceOptions
+    );
 
     // open tab item based on id
     tabs.show('overview');
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
