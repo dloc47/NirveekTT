@@ -1,14 +1,13 @@
 <section class="section pt-14 pb-32">
-
-
   <div class="section-title-container text-center">
     <h1
-      class="mb-16 text-center section-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-white tracking-tight">
+      class="mb-16 text-center section-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-white tracking-tight"
+    >
       Explore Popular Destination
     </h1>
   </div>
 
-  <div class="w-full items-end justify-end flex mb-4">
+  <!-- <div class="w-full items-end justify-end flex mb-4">
 
     <div class="mt-8 flex gap-4 lg:mt-0 owl-nav">
       <button aria-label="Previous slide" id="keen-slider-previous"
@@ -27,56 +26,78 @@
         </svg>
       </button>
     </div>
-  </div>
+  </div> -->
 
-  <div class="owl-carousel popular-destination owl-theme">
-    <div *ngFor="let destination of popularDestination" class="item">
-      <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
-        <a>
-          <img class="rounded-t-lg h-48 object-cover" src={{destination.destinationImage}} alt="" />
-        </a>
-        <!-- <div class="priceLabel bg-orange-400 rounded-md text-white w-max px-2 py-1 absolute top-[10px] right-[10px]">
-          <span class="font-semibold">₹ 15,000 <span class="text-xs font-normal">/ per person</span></span>
-        </div> -->
-
-        <div class="w-full flex justify-end relative">
-          <p
-            class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
-            <i class="fa-solid fa-clock"></i> {{destination.duration}}
-          </p>
-        </div>
-
-        <div class="packageName p-5 pb-0">
-          <a href="#">
-            <h5
-              class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
-              {{destination.destinationTitle}}</h5>
+  <div class="main-content">
+    <div class="owl-carousel popular-destination owl-theme">
+      <div *ngFor="let destination of popularDestination" class="item">
+        <div
+          class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative"
+        >
+          <a>
+            <img
+              class="rounded-t-lg h-48 object-cover"
+              src="{{ destination.destinationImage }}"
+              alt=""
+            />
           </a>
-        </div>
 
-        <div class="packageDescription px-5">
-          <p
-            class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-pretty">
-            {{destination.destinationDescription}}
-          </p>
-        </div>
-        <div class="packageBtns mt-3 p-5 pt-0 flex space-x-3 justify-end">
-          <a (click)="redirectToItinerary(destination)"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            View / Enquire
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-          </a>
+          <div class="w-full flex justify-end relative">
+            <p
+              class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs"
+            >
+              <i class="fa-solid fa-clock"></i> {{ destination.duration }}
+            </p>
+          </div>
+
+          <div class="packageName p-5 pb-0">
+            <a href="#">
+              <h5
+                class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden"
+              >
+                {{ destination.destinationTitle }}
+              </h5>
+            </a>
+          </div>
+
+          <div class="packageDescription px-5">
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-pretty"
+            >
+              {{ destination.destinationDescription }}
+            </p>
+          </div>
+          <div class="packageBtns mt-3 p-5 pt-0 flex space-x-3 justify-end">
+            <a
+              (click)="redirectToItinerary(destination)"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              View / Enquire
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
+    
+    <div class="owl-theme">
+      <div class="owl-controls">
+        <div class="custom-nav owl-nav"></div>
+      </div>
+    </div>
   </div>
-
-
-
 </section>
