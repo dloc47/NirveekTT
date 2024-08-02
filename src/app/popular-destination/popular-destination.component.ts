@@ -697,8 +697,8 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
       loop: true,
       items: 3,
       margin: 25,
-      autoplay: false,
-      autoplayTimeout: 2000,
+      autoplay: true,
+      autoplayTimeout: 4000,
       autoplayHoverPause: true,
       nav: true,
       navText: [
