@@ -1,11 +1,8 @@
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-[9999] top-0 start-0 border-b border-gray-200">
-
-  <div
-    class="nav-contact-details flex flex-row flex-wrap justify-center gap-y-2 gap-x-8 px-4 py-2 bg-green-500 text-white">
+  <div class="nav-contact-details flex flex-row flex-wrap justify-center gap-y-2 gap-x-8 px-4 py-2 bg-green-500 text-white">
     <div class="phoneWrapper flex items-baseline gap-1 text-xs font-semibold text-center">
       <i class="fa-solid fa-phone text-blue-400"></i>
-      <p>+91 <a href="tel:+917407363783" class="cursor-pointer">7407363783</a> / <a href="tel:+917602530248"
-          class="cursor-pointer">7602530248</a></p>
+      <p>+91 <a href="tel:+917407363783" class="cursor-pointer">7407363783</a> / <a href="tel:+917602530248" class="cursor-pointer">7602530248</a></p>
     </div>
     <div class="emailWrapper flex items-baseline gap-1 text-xs font-semibold text-center">
       <i class="fa-solid fa-envelope text-blue-400"></i>
@@ -13,13 +10,11 @@
     </div>
     <div class="addressWrapper flex items-baseline gap-1 text-xs font-semibold text-center">
       <i class="fa-solid fa-location-dot text-blue-400"></i>
-      <p><a href="https://maps.app.goo.gl/tWGRLLson19Rmvj3A" target="_blank" class="cursor-pointer">Lower Burtuk, Gurung
-          Gaon, Helipad Road, Gangtok, Sikkim - 737101</a></p>
+      <p><a href="https://maps.app.goo.gl/tWGRLLson19Rmvj3A" target="_blank" class="cursor-pointer">Lower Burtuk, Gurung Gaon, Helipad Road, Gangtok, Sikkim - 737101</a></p>
     </div>
   </div>
 
   <div class="max-w-screen-2xl flex flex-wrap space-x-4 items-center justify-between mx-auto p-4 md:px-14 lg:px-32">
-
     <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="assets/images/nirveek-logo.jpeg" class="h-12" alt="Logo" />
       <span class="flex flex-col justify-start">
@@ -32,60 +27,38 @@
       </span>
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <!-- <img class="h-14" src="https://www.pngplay.com/wp-content/uploads/2/Certified-Transparent-File.png" alt=""> -->
-      <img class="h-14 hidden xl:block"
-        src="https://freerangestock.com/sample/60511/certified-stamp-means-promise-ratify-and-authenticate.jpg" alt="">
-      <!-- <button type="button"
-        class="hidden xl:block text-white bg-primary-color hover:bg-primary-hover-color focus:ring-4 focus:outline-none 
-      focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Enquiry
-        Now</button> -->
-      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg
-       md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 
-       dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+      <img class="h-14 hidden xl:block" src="https://freerangestock.com/sample/60511/certified-stamp-means-promise-ratify-and-authenticate.jpg" alt="">
+      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15" />
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
         </svg>
       </button>
     </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta" aria-expanded="false">
-      <ul class="flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row 
-        md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+    <div class="items-center justify-between hidden h-screen md:h-auto w-full md:flex md:w-auto md:order-1" id="navbar-cta" aria-expanded="false">
+      <ul class="flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-20 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li class="cursor-pointer" (click)="closeDropDownManually();">
-          <a routerLink="/"
-            class="block py-2 px-3 md:p-0 text-white bg-primary-color rounded md:bg-transparent md:text-primary-color"
-            aria-current="page">Home</a>
+          <a routerLink="/" class="block py-2 px-3 md:p-0 text-white bg-primary-color rounded md:bg-transparent md:text-primary-color" aria-current="page">Home</a>
         </li>
 
         <li class="cursor-pointer">
-          <a class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-color 
-            d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent 
-            dark:border-gray-700 cursor-pointer" routerLink="." fragment="about">About Us</a>
+          <a class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-color md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 cursor-pointer" routerLink="." fragment="about">About Us</a>
         </li>
 
         <li class="cursor-pointer">
-          <button id="dropdownNavbarBtn" data-dropdown-offset-distance="28" data-dropdown-toggle="dropdownNavbarMenu" data-dropdown-trigger="click" class="flex items-center justify-between 
-          w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-primary-color md:p-0 md:w-auto
-           dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 
-           md:dark:hover:bg-transparent">Destinations & Attractions
-            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m1 1 4 4 4-4" />
+          <button id="dropdownNavbarBtn" data-dropdown-offset-distance="28" data-dropdown-toggle="dropdownNavbarMenu" data-dropdown-trigger="click" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-color md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Destinations & Attractions
+            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
             </svg></button>
-          <div id="dropdownNavbarMenu"
-            class="subMenuList h-max lg:w-max absolute top-full left-1/2 -translate-x-1/2 shadow-md bg-white hidden p-1">
-            <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 
-              md:px-6 overflow-y-scroll md:overflow-y-auto">
+          <div id="dropdownNavbarMenu" class="subMenuList h-96 lg:w-max absolute top-full left-1/2 -translate-x-1/2 shadow-md bg-white hidden p-1 overflow-y-auto">
+            <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 md:px-6">
               <ul class="w-max" *ngFor="let item of destinations">
                 <li>
                   <div class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                     <div class="font-semibold">{{ item.region }}</div>
                     <ul class="pt-2">
                       <ng-container *ngFor="let place of item.places; let i = index">
-                        <li *ngIf="i < 10 || item.showMore"
-                          class="text-sm text-gray-500 dark:text-gray-400 leading-7 hover:pl-1 transition-all ease-in flex items-baseline cursor-pointer">
+                        <li *ngIf="i < 10 || item.showMore" class="text-sm text-gray-500 dark:text-gray-400 leading-7 hover:pl-1 transition-all ease-in flex items-baseline cursor-pointer">
                           <i class="fa-solid fa-angles-right fa-xs mr-2 text-primary-color"></i>{{ place }}
                         </li>
                       </ng-container>
@@ -101,9 +74,7 @@
         </li>
 
         <li class="cursor-pointer">
-          <a class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-color 
-            md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
-             dark:border-gray-700" routerLink="." fragment="contact">Contact Us</a>
+          <a class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-color md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" routerLink="." fragment="contact">Contact Us</a>
         </li>
       </ul>
     </div>
