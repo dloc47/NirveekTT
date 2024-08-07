@@ -1,20 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  FormControl,
+} from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
+
+interface EmailData {
+  to_name: string;
+  from_name: string;
+  subject: number;
+  from_email: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.css']
+  styleUrls: ['./contact-form.component.css'],
 })
 export class ContactFormComponent implements OnInit {
-
   contactFormGroup!: FormGroup;
   alreadySent: boolean = false;
   loading: boolean = false;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder, private toastr: ToastrService) {}
 
   ngOnInit() {
     this.contactForm();
@@ -26,9 +39,12 @@ export class ContactFormComponent implements OnInit {
       to_name: ['Nirveek Tours & Travels'],
       from_name: ['', [Validators.required, this.noWhitespaceValidator]],
       subject: [0, [Validators.required, this.DropDownIDValidator]],
-      from_email: ['', [Validators.required, Validators.email, this.noWhitespaceValidator]],
-      message: ['', [Validators.required, this.noWhitespaceValidator]]
-    })
+      from_email: [
+        '',
+        [Validators.required, Validators.email, this.noWhitespaceValidator],
+      ],
+      message: ['', [Validators.required, this.noWhitespaceValidator]],
+    });
   }
 
   checkAlreadySent() {
@@ -36,35 +52,32 @@ export class ContactFormComponent implements OnInit {
     if (savedDate) {
       const savedTimestamp = new Date(savedDate);
       const currentTimestamp = new Date();
-      const msBetweenDates = Math.abs(savedTimestamp.getTime() - currentTimestamp.getTime());
+      const msBetweenDates = Math.abs(
+        savedTimestamp.getTime() - currentTimestamp.getTime()
+      );
       const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000);
 
       this.alreadySent = hoursBetweenDates < 24;
     }
   }
 
-
   async sendEmail() {
     if (this.alreadySent) {
       this.toastr.error('You can only send one message every 24 hours.');
       return;
     }
-  
+
     this.loading = true;
-  
+
     try {
       emailjs.init('HFsOjtE8qOZo3u-ge');
-      const response: any = await emailjs.send('service_psx1wan', 'template_wnro4ih', {
-        to_name: this.contactFormGroup.value.to_name,
-        from_name: this.contactFormGroup.value.from_name,
-        subject: this.contactFormGroup.value.subject,
-        from_email: this.contactFormGroup.value.from_email,
-        message: this.contactFormGroup.value.message,
-      });
+      // Use the interface to type-check the form data
+      const emailData: Record<string, any> = this.contactFormGroup.value;    
+      await emailjs.send('service_psx1wan', 'template_wnro4ih', emailData);
       this.toastr.success('Message has been sent successfully!');
       this.contactFormGroup.reset({
         to_name: 'Nirveek Tours & Travels',
-        subject: 0 // Reset subject to default value
+        subject: 0, // Reset subject to default value
       });
       this.alreadySent = true;
       localStorage.setItem('alreadySent', new Date().toISOString());
@@ -75,17 +88,15 @@ export class ContactFormComponent implements OnInit {
       this.loading = false;
     }
   }
-  
 
   public noWhitespaceValidator(control: FormControl) {
-    return (control.value || '').trim().length ? null : { 'whitespace': true };
+    return (control.value || '').trim().length ? null : { whitespace: true };
   }
 
   DropDownIDValidator(control: AbstractControl): { [key: string]: any } | null {
     if (control.value == 0) {
-      return { 'SelectValue': true }
+      return { SelectValue: true };
     }
     return null;
   }
-  
 }
