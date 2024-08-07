@@ -21,6 +21,7 @@
     "@emailjs/browser": "^4.3.3",
     "flowbite": "^2.3.0",
     "jquery": "^3.7.1",
+    "ngx-toastr": "^15.2.2",
     "owl.carousel": "^2.3.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

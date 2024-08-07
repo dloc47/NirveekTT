@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 
+/* Style for ngx-toastr */
+@import 'ngx-toastr/toastr';
+
 h1.section-title {
     position: relative;
     display: inline-block;

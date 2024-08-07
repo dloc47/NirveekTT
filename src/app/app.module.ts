@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -23,9 +22,11 @@ import { FaqComponent } from './faq/faq.component';
 import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TourPackagesComponent } from './tour-packages/tour-packages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [						
+  declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -43,17 +44,22 @@ import { TourPackagesComponent } from './tour-packages/tour-packages.component';
     ReviewsComponent,
     HomeCarouselComponent,
     EnquiryBarComponent,
-      FaqComponent,
-      HowToReachSikkimComponent,
-      TourPackagesComponent
-   ],
+    FaqComponent,
+    HowToReachSikkimComponent,
+    TourPackagesComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module for ToastrModule
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      positionClass: 'toast-top-center'
+    }), // ToastrModule added
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
