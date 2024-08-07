@@ -10,17 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactFormComponent implements OnInit {
 
-
-    //TARCON STYLE FOR HOT TOAST
-    // nirveekTheme: any = {
-    //   position: 'bottom-center',  // Or 'bottom-right', 'top-right', etc.
-    //   iconTheme: {
-    //     primary: '#713200',
-    //     secondary: '#FFFAEE',
-    //   },
-    //   className: 'custom-toast' // Apply the custom CSS class
-    // };
-
   contactFormGroup!: FormGroup;
   alreadySent: boolean = false;
   loading: boolean = false;
@@ -58,12 +47,11 @@ export class ContactFormComponent implements OnInit {
   async sendEmail() {
     if (this.alreadySent) {
       this.toastr.error('You can only send one message every 24 hours.');
-      // this.hotToast.error('You can only send one message every 24 hours.');
       return;
     }
-
+  
     this.loading = true;
-
+  
     try {
       emailjs.init('HFsOjtE8qOZo3u-ge');
       const response: any = await emailjs.send('service_psx1wan', 'template_wnro4ih', {
@@ -74,18 +62,20 @@ export class ContactFormComponent implements OnInit {
         message: this.contactFormGroup.value.message,
       });
       this.toastr.success('Message has been sent successfully!');
-      // this.hotToast.success('Message has been sent successfully!');
-      this.contactFormGroup.reset();
+      this.contactFormGroup.reset({
+        to_name: 'Nirveek Tours & Travels',
+        subject: 0 // Reset subject to default value
+      });
       this.alreadySent = true;
       localStorage.setItem('alreadySent', new Date().toISOString());
     } catch (error) {
       console.error('Error sending email:', error);
-      // this.hotToast.error('Failed to send the message. Please try again later.');
       this.toastr.error('Failed to send the message. Please try again later.');
     } finally {
       this.loading = false;
     }
   }
+  
 
   public noWhitespaceValidator(control: FormControl) {
     return (control.value || '').trim().length ? null : { 'whitespace': true };
