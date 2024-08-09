@@ -24,9 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { OurServiceComponent } from './our-service/our-service.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -47,7 +48,8 @@ import { ToastrModule } from 'ngx-toastr';
     FaqComponent,
     HowToReachSikkimComponent,
     TourPackagesComponent,
-  ],
+      OurServiceComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
