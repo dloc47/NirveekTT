@@ -144,11 +144,12 @@ export class NavbarComponent implements OnInit {
       }
     }
   
-    // If no other sections are found, set 'home' as active
+    // If no sections are found, do not set any active state
     if (!found) {
-      this.currentSection = 'home';
+      this.currentSection = ''; // Clear active state
     }
   }
+  
   
 
   isActive(section: string): boolean {
