@@ -196,46 +196,46 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Any other items not mentioned in ‘Inclusions’.',
       ],
     },
-    {
-      destinationImage:
-        'https://www.hlimg.com/images/things2do/738X538/48_1523009794t.jpg',
-      duration: '4 Nights, 5 Days',
-      destinationTitle: 'Varsey Tour',
-      destinationDescription:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-      touritinerary: [
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-      ],
-      including: [
-        'Accommodation as per itinerary.',
-        'All transfers & sight seeings as per itinerary.',
-        'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-        'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-      ],
-      exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-        'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-        'Entry fee for all monuments and places of interest if any.',
-        'Airfares and Train ticket charges if any.',
-        'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-        'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
-      ],
-    },
+    // {
+    //   destinationImage:
+    //     'https://www.hlimg.com/images/things2do/738X538/48_1523009794t.jpg',
+    //   duration: '4 Nights, 5 Days',
+    //   destinationTitle: 'Varsey Tour',
+    //   destinationDescription:
+    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
+    //   touritinerary: [
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //   ],
+    //   including: [
+    //     'Accommodation as per itinerary.',
+    //     'All transfers & sight seeings as per itinerary.',
+    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
+    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
+    //   ],
+    //   exclusion: [
+    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
+    //     'Entry fee for all monuments and places of interest if any.',
+    //     'Airfares and Train ticket charges if any.',
+    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
+    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
+    //     'Any other items not mentioned in ‘Inclusions’.',
+    //   ],
+    // },
     {
       destinationImage:
         'https://static2.tripoto.com/media/filter/tst/img/1983524/Image/1663962346_123082784_3966304783397951_6857343328191820186_o_1_1170x614.jpg.webp',
@@ -356,125 +356,125 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Any other items not mentioned in ‘Inclusions’.',
       ],
     },
-    {
-      destinationImage:
-        'https://kanchenjungaholidays.com/images/destination/sikkim/west-sikkim/uttarey-main/uttarey3.jpg',
-      duration: '3 Nights, 4 Days',
-      destinationTitle: 'Uttarey Tour',
-      destinationDescription:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-      touritinerary: [
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-      ],
-      including: [
-        'Accommodation as per itinerary.',
-        'All transfers & sight seeings as per itinerary.',
-        'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-        'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-      ],
-      exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-        'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-        'Entry fee for all monuments and places of interest if any.',
-        'Airfares and Train ticket charges if any.',
-        'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-        'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
-      ],
-    },
-    {
-      destinationImage:
-        'https://static2.tripoto.com/media/filter/tst/img/413392/TripDocument/1548765524_1548765295327.jpg',
-      duration: '3 Nights, 4 Days',
-      destinationTitle: 'Dzongu Tour',
-      destinationDescription:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-      touritinerary: [
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-      ],
-      including: [
-        'Accommodation as per itinerary.',
-        'All transfers & sight seeings as per itinerary.',
-        'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-        'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-      ],
-      exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-        'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-        'Entry fee for all monuments and places of interest if any.',
-        'Airfares and Train ticket charges if any.',
-        'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-        'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
-      ],
-    },
-    {
-      destinationImage: 'https://static.toiimg.com/photo/53909065.cms',
-      duration: '11 Nights, 12 Days',
-      destinationTitle: 'Sikkim Darjeeling Kalimpong',
-      destinationDescription:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-      touritinerary: [
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-        },
-        {
-          day: 'Arrival Kathmandu & transfer to Pokhra',
-          description:
-            'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        },
-      ],
-      including: [
-        'Accommodation as per itinerary.',
-        'All transfers & sight seeings as per itinerary.',
-        'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-        'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-      ],
-      exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-        'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-        'Entry fee for all monuments and places of interest if any.',
-        'Airfares and Train ticket charges if any.',
-        'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-        'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
-      ],
-    },
+    // {
+    //   destinationImage:
+    //     'https://kanchenjungaholidays.com/images/destination/sikkim/west-sikkim/uttarey-main/uttarey3.jpg',
+    //   duration: '3 Nights, 4 Days',
+    //   destinationTitle: 'Uttarey Tour',
+    //   destinationDescription:
+    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
+    //   touritinerary: [
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //   ],
+    //   including: [
+    //     'Accommodation as per itinerary.',
+    //     'All transfers & sight seeings as per itinerary.',
+    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
+    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
+    //   ],
+    //   exclusion: [
+    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
+    //     'Entry fee for all monuments and places of interest if any.',
+    //     'Airfares and Train ticket charges if any.',
+    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
+    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
+    //     'Any other items not mentioned in ‘Inclusions’.',
+    //   ],
+    // },
+    // {
+    //   destinationImage:
+    //     'https://static2.tripoto.com/media/filter/tst/img/413392/TripDocument/1548765524_1548765295327.jpg',
+    //   duration: '3 Nights, 4 Days',
+    //   destinationTitle: 'Dzongu Tour',
+    //   destinationDescription:
+    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
+    //   touritinerary: [
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //   ],
+    //   including: [
+    //     'Accommodation as per itinerary.',
+    //     'All transfers & sight seeings as per itinerary.',
+    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
+    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
+    //   ],
+    //   exclusion: [
+    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
+    //     'Entry fee for all monuments and places of interest if any.',
+    //     'Airfares and Train ticket charges if any.',
+    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
+    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
+    //     'Any other items not mentioned in ‘Inclusions’.',
+    //   ],
+    // },
+    // {
+    //   destinationImage: 'https://static.toiimg.com/photo/53909065.cms',
+    //   duration: '11 Nights, 12 Days',
+    //   destinationTitle: 'Sikkim Darjeeling Kalimpong',
+    //   destinationDescription:
+    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
+    //   touritinerary: [
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
+    //     },
+    //     {
+    //       day: 'Arrival Kathmandu & transfer to Pokhra',
+    //       description:
+    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+    //     },
+    //   ],
+    //   including: [
+    //     'Accommodation as per itinerary.',
+    //     'All transfers & sight seeings as per itinerary.',
+    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
+    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
+    //   ],
+    //   exclusion: [
+    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
+    //     'Entry fee for all monuments and places of interest if any.',
+    //     'Airfares and Train ticket charges if any.',
+    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
+    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
+    //     'Any other items not mentioned in ‘Inclusions’.',
+    //   ],
+    // },
   ];
 
   ngOnInit() {}

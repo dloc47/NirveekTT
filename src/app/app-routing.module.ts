@@ -12,6 +12,8 @@ import { ReviewsComponent } from './user-reviews/reviews.component';
 import { FaqComponent } from './faq/faq.component';
 import { HowToReachSikkimComponent } from './how-to-reach-sikkim/how-to-reach-sikkim.component';
 import { TourPackagesComponent } from './tour-packages/tour-packages.component';
+import { ThingsToDoComponent } from './things-to-do/things-to-do.component';
+import { TravelEssentialsComponent } from './travel-essentials/travel-essentials.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent, pathMatch:"full"},
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path: "packages", component: TourPackagesComponent },
   {path: "faq", component: FaqComponent },
   {path: "how-to-reach-sikkim", component: HowToReachSikkimComponent },
+  {path: "things-to-do", component: ThingsToDoComponent },
+  {path: "travel-essentials", component: TravelEssentialsComponent },
   { path: '**', component: PageNotFoundComponent }, // wildcard route for unknown paths - (Add this wildcard to last index, else it will throw an error to known route also)
 ];
 

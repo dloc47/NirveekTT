@@ -25,9 +25,11 @@ import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { OurServiceComponent } from './our-service/our-service.component';
+import { TravelEssentialsComponent } from './travel-essentials/travel-essentials.component';
+import { ThingsToDoComponent } from './things-to-do/things-to-do.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [				
     AppComponent,
     HomeComponent,
     NavbarComponent,
@@ -48,7 +50,9 @@ import { OurServiceComponent } from './our-service/our-service.component';
     FaqComponent,
     HowToReachSikkimComponent,
     TourPackagesComponent,
-      OurServiceComponent
+      OurServiceComponent,
+      TravelEssentialsComponent,
+      ThingsToDoComponent
    ],
   imports: [
     BrowserModule,
