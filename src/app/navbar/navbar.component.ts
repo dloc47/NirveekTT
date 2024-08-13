@@ -117,24 +117,24 @@ export class NavbarComponent implements OnInit {
   setActiveLink(): void {
     const sections = ['home', 'about', 'contact'];
     let found = false;
-  
+
     const viewportHeight = window.innerHeight;
-  
+
     for (const sectionId of sections) {
       const element = document.getElementById(sectionId);
       if (element) {
         const rect = element.getBoundingClientRect();
         const elementTop = rect.top + window.scrollY;
         const elementBottom = rect.bottom + window.scrollY;
-  
+
         // Calculate visibility
         const viewportTop = window.scrollY + this.scrollOffset;
         const viewportBottom = viewportTop + viewportHeight;
-  
+
         const elementHeight = elementBottom - elementTop;
         const visibleHeight = Math.min(viewportBottom, elementBottom) - Math.max(viewportTop, elementTop);
         const visiblePercentage = (visibleHeight / elementHeight) * 100;
-  
+
         // Check if the section is at least 50% visible
         if (visiblePercentage >= 50) {
           this.currentSection = sectionId;
@@ -143,18 +143,25 @@ export class NavbarComponent implements OnInit {
         }
       }
     }
-  
+
     // If no sections are found, do not set any active state
     if (!found) {
-      this.currentSection = ''; // Clear active state
+      // Handle route-based activation
+      const currentRoute = this.router.url;
+      if (currentRoute.includes('packages')) {
+        this.currentSection = 'destinations-nav'; // Adjust this to your section ID
+      } else {
+        this.currentSection = ''; // Clear active state
+      }
     }
   }
-  
-  
 
   isActive(section: string): boolean {
     return this.currentSection === section;
   }
+  
+  
+
 
   shouldShowSeeMoreButton(item: any): boolean {
     return item.places.length > 10;
