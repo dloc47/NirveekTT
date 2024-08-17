@@ -152,12 +152,12 @@ export class FeaturedDestinationComponent implements OnInit, AfterViewInit {
         0: {
           items: 1
         },
-        500: {
-          items: 2
+        640: {
+          items: 2,
         },
-        800: {
-          items: 3
-        }
+        768: {
+          items: 3,
+        },
       }
     })
   }

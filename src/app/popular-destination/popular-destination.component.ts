@@ -496,10 +496,10 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         0: {
           items: 1,
         },
-        500: {
+        640: {
           items: 2,
         },
-        800: {
+        768: {
           items: 3,
         },
         // ,

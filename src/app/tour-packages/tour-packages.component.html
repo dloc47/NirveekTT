@@ -1,141 +1,356 @@
-<section class="section bg-gray-50 py-10">
-
-  <!-- <div class="flex packageHeadingSection">
-    <div class="tourNavigatorHeadingSection border w-1/4 text-center p-4">
-      <h1 class="font-semibold mb-3">Holiday Theme</h1>
-      <div class="contentWrapper bg-green-100 rounded-md p-2 text-left">
-        <ul *ngFor="let theme of holidayTheme" class="flex items-center leading-8">
-          <i class="fa-solid fa-angles-right fa-xs mr-2 text-primary-color"></i>
-          <li>{{theme}}</li>
-        </ul>
-      </div>
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <!-- Title Section -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-white">
+        All Packages
+      </h1>
     </div>
 
-    <div class="tourContentHeadingSection border w-full p-4">
-      <h1 class="font-semibold mb-3">Selected Holiday Theme</h1>
-      <div class="contentWrapper bg-green-100 rounded-md p-2">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, consequuntur ducimus
-          incidunt assumenda at
-          recusandae quas mollitia enim magni modi aliquid odio error necessitatibus adipisci iure explicabo aperiam,
-          dolorem in. Possimus tenetur amet, omnis sapiente deserunt dolorum quasi praesentium ab!</p>
-      </div>
-
-
-      <div class="container my-12 mx-auto px-4 md:px-12">
-        <div class="flex flex-wrap -mx-1 lg:-mx-4">
-
-          <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" *ngFor="let package of packages">
-
-            <article class="overflow-hidden rounded-lg shadow-lg">
-
-              <figure class="max-h-64 aspect-square overflow-hidden w-full">
-                <img alt="Placeholder" class="w-full h-full object-cover transition hover:scale-125"
-                  src="{{package.image}}">
-              </figure>
-
-              <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                <h1 class="text-lg">
-                  <a class="no-underline hover:underline text-black" href="#">
-                    {{package.title}}
-                  </a>
-                </h1>
-                <p class="text-gray-500 text-sm">
-                  {{package.duration}}
-                </p>
-              </header>
-
-              <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                <a
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  View / Enquire
-                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9" />
-                  </svg>
-                </a>
-              </footer>
-
-            </article>
-
-          </div>
-
+    <!-- Wrapper for Filter and Cards -->
+    <div class="flex flex-col lg:flex-row">
+      <!-- Sidebar for Filters -->
+      <div class="w-full lg:w-1/4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6 lg:mb-0 lg:mr-6">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Filters</h2>
+        
+        <!-- Search Bar -->
+        <div class="mb-6">
+          <input type="text" placeholder="Search Packages" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-400">
         </div>
-
+        
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-4">
+          <div class="flex-1 min-w-[200px]">
+            <h3 class="font-medium text-gray-900 dark:text-white mb-2">Category</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="text-blue-600 hover:underline">Adventure</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Relaxation</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Culture</a></li>
+            </ul>
+          </div>
+          <div class="flex-1 min-w-[200px]">
+            <h3 class="font-medium text-gray-900 dark:text-white mb-2">Price Range</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="text-blue-600 hover:underline">Under $500</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">$500 - $1000</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Over $1000</a></li>
+            </ul>
+          </div>
+          <div class="flex-1 min-w-[200px]">
+            <h3 class="font-medium text-gray-900 dark:text-white mb-2">Duration</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="text-blue-600 hover:underline">1-3 days</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">4-7 days</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">Over 7 days</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div> -->
 
-  <div class="tourContentHeadingSection border rounded-lg w-full p-4">
-    <h2 class="text-2xl font-semibold mb-6">Attractions</h2>
-    <div class="contentWrapper bg-gray-50 rounded-md p-2">
-      <p>Sikkim, nestled in the Himalayas, is a haven for adventure and nature enthusiasts. The state offers thrilling
-        activities like trekking, river rafting, and hill cycling. Paragliding over stunning landscapes provides an
-        unforgettable aerial view, while the annual flower shows showcase a vibrant array of blooms, including rare
-        orchids and rhododendrons. Wildlife enthusiasts can explore rich biodiversity in its sanctuaries, and serene
-        monasteries offer a glimpse into Sikkim's spiritual heritage. With its unique blend of adventure, natural
-        beauty, and cultural richness, Sikkim promises an unforgettable experience for every traveler.</p>
-    </div>
+      <!-- Packages Section -->
+      <div class="w-full lg:w-3/4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+          <!-- Example Card -->
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
 
-
-    <div class="container my-8 mx-auto">
-      <div class="flex flex-wrap gap-y-2 lg:gap-0 -mx-1 lg:-mx-4">
-
-        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" *ngFor="let package of packages">
-
-          <article class="overflow-hidden rounded-lg shadow-lg">
-
-            <figure class="max-h-64 aspect-square overflow-hidden w-full">
-              <img alt="Placeholder" class="w-full h-full object-cover transition hover:scale-125"
-                src="{{package.image}}">
-            </figure>
-
-            <!-- <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-              <h1 class="text-lg">
-                <a class="no-underline hover:underline text-black" href="#">
-                  {{package.title}}
-                </a>
-              </h1>
-              <p class="text-gray-500 text-sm">
-                {{package.duration}}
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
               </p>
-            </header> -->
+            </div>
 
-            <header class="leading-tight px-2 md:px-4 pt-2 md:pt-4">
-              <h1 class="text-lg mb-3">
-                <a class="no-underline hover:underline text-black" href="#">
-                  {{package.title}}
-                </a>
-              </h1>
-              <p class="text-gray-500 text-sm flex items-center gap-2">
-                <i class="fa-solid fa-clock text-primary-color"></i>
-                <span>{{package.duration}}</span>
-              </p>
-            </header>
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
 
-            <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-              <p class="text-gray-800 text-sm flex items-center gap-2">
-                <i class="fa-solid fa-location-dot text-primary-color"></i>
-                <span>{{package.region}}</span>
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
               </p>
-              <a (click)="gotoItinerary(package)"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View / Enquire
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="none" viewBox="0 0 14 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
               </a>
-            </footer>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
 
-          </article>
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
 
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Destination 1">
+            </a>
+
+            <div class="w-full flex justify-end relative">
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
+                <i class="fa-solid fa-clock"></i> 3 days
+              </p>
+            </div>
+
+            <div class="p-5 pb-0">
+              <a href="#">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
+                  Exotic Beach
+                </h5>
+              </a>
+            </div>
+
+            <div class="px-5">
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.
+              </p>
+            </div>
+            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+              <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                View / Enquire
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Repeat card structure for more cards -->
         </div>
-
       </div>
-
     </div>
   </div>
-
 </section>
