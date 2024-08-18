@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,45 +7,240 @@ import { Router } from '@angular/router';
   styleUrls: ['./tour-packages.component.css'],
 })
 export class TourPackagesComponent implements OnInit {
-  constructor(private router: Router) {}
+  
+  currentPage: number = 1;
+  itemsPerPage: number = 9; // Default for large screens
+  totalItems: number = 30; // Replace with actual total count
+  packages: any[] = [];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.adjustItemsPerPage(window.innerWidth);
+    this.totalItems = this.getAllPackages().length; // Set the totalItems based on dummy data
+    this.loadPackages();
+  }
 
-  selectedTab = 'Profile';
-  navItems = [
-    {
-      name: 'Profile',
-      iconPath:
-        'M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z',
-      viewBox: '0 0 20 20',
-    },
-    {
-      name: 'Dashboard',
-      iconPath:
-        'M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z',
-      viewBox: '0 0 18 18',
-    },
-    {
-      name: 'Settings',
-      iconPath:
-        'M18 7.5h-.423l-.452-1.09.3-.3a1.5 1.5 0 0 0 0-2.121L16.01 2.575a1.5 1.5 0 0 0-2.121 0l-.3.3-1.089-.452V2A1.5 1.5 0 0 0 11 .5H9A1.5 1.5 0 0 0 7.5 2v.423l-1.09.452-.3-.3a1.5 1.5 0 0 0-2.121 0L2.576 3.99a1.5 1.5 0 0 0 0 2.121l.3.3L2.423 7.5H2A1.5 1.5 0 0 0 .5 9v2A1.5 1.5 0 0 0 2 12.5h.423l.452 1.09-.3.3a1.5 1.5 0 0 0 0 2.121l1.415 1.413a1.5 1.5 0 0 0 2.121 0l.3-.3 1.09.452V18A1.5 1.5 0 0 0 9 19.5h2a1.5 1.5 0 0 0 1.5-1.5v-.423l1.09-.452.3.3a1.5 1.5 0 0 0 2.121 0l1.415-1.414a1.5 1.5 0 0 0 0-2.121l-.3-.3.452-1.09H18a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 18 7.5Zm-8 6a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z',
-      viewBox: '0 0 20 20',
-    },
-    {
-      name: 'Contact',
-      iconPath:
-        'M7.824 5.937a1 1 0 0 0 .726-.312 2.042 2.042 0 0 1 2.835-.065 1 1 0 0 0 1.388-1.441 3.994 3.994 0 0 0-5.674.13 1 1 0 0 0 .725 1.688Z M17 7A7 7 0 1 0 3 7a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V7a5 5 0 1 1 10 0v7.083A2.92 2.92 0 0 1 12.083 17H12a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a1.993 1.993 0 0 0 1.722-1h.361a4.92 4.92 0 0 0 4.824-4H17a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3Z',
-      viewBox: '0 0 20 20',
-    },
-    {
-      name: 'Disabled',
-      iconPath:
-        'M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z',
-      viewBox: '0 0 20 20',
-    },
-  ];
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.adjustItemsPerPage(event.target.innerWidth);
+    this.loadPackages();
+  }
 
-  selectTab(item: any) {
-    this.selectedTab = item.name;
+  adjustItemsPerPage(width: number) {
+    if (width < 768) { // Tailwind's `sm` breakpoint
+      this.itemsPerPage = 6;
+    } else if (width >= 768 && width < 1024) { // Tailwind's `md` breakpoint
+      this.itemsPerPage = 8;
+    } else { // Larger screens
+      this.itemsPerPage = 9;
+    }
+  }
+
+  loadPackages() {
+    // Load packages based on the currentPage and itemsPerPage
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    this.packages = this.getAllPackages().slice(start, end);
+  }
+
+  getAllPackages() {
+    // Dummy data for packages
+    return [
+      {
+        title: 'Exotic Beach',
+        description: 'Enjoy a relaxing time at the exotic beach with pristine waters and sandy shores.',
+        duration: '3 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Mountain Adventure',
+        description: 'Experience the thrill of mountain climbing and breathtaking views.',
+        duration: '5 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Cultural Exploration',
+        description: 'Dive deep into the local culture with guided tours and authentic experiences.',
+        duration: '7 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'City Lights',
+        description: 'Explore the vibrant nightlife and landmarks of the city.',
+        duration: '2 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Desert Safari',
+        description: 'Adventure through the desert with dune bashing and camel rides.',
+        duration: '4 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Island Getaway',
+        description: 'Relax on a tropical island with all-inclusive amenities.',
+        duration: '6 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Historical Journey',
+        description: 'Visit ancient sites and learn about the history of the region.',
+        duration: '8 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Wildlife Safari',
+        description: 'See exotic animals in their natural habitat on this guided safari.',
+        duration: '5 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Luxury Cruise',
+        description: 'Sail the seas in style with luxury accommodations and gourmet dining.',
+        duration: '7 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Winter Wonderland',
+        description: 'Experience the magic of winter with skiing, snowboarding, and cozy cabins.',
+        duration: '6 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Forest Retreat',
+        description: 'Unwind in a serene forest environment with nature walks and spa treatments.',
+        duration: '3 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Coastal Drive',
+        description: 'Drive along the coast and enjoy scenic views and seaside towns.',
+        duration: '5 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Gastronomic Tour',
+        description: 'Savor the flavors of the region with culinary tours and cooking classes.',
+        duration: '4 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'River Expedition',
+        description: 'Navigate through rivers on this adventurous expedition.',
+        duration: '8 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Volcano Trek',
+        description: 'Climb up an active volcano and witness its incredible power.',
+        duration: '2 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Wine Country',
+        description: 'Tour the vineyards and taste some of the finest wines.',
+        duration: '3 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Jungle Safari',
+        description: 'Explore the dense jungle and discover its wildlife and flora.',
+        duration: '7 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Island Hopping',
+        description: 'Hop from one island to another and enjoy different beaches and cultures.',
+        duration: '5 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Countryside Escape',
+        description: 'Relax in the countryside with fresh air and peaceful surroundings.',
+        duration: '4 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Cave Exploration',
+        description: 'Discover the mysteries of ancient caves with expert guides.',
+        duration: '3 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Northern Lights',
+        description: 'Witness the spectacular northern lights in the night sky.',
+        duration: '6 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Desert Oasis',
+        description: 'Find tranquility in a desert oasis with luxurious amenities.',
+        duration: '5 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Mediterranean Cruise',
+        description: 'Cruise the Mediterranean and explore its beautiful islands.',
+        duration: '10 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Polar Expedition',
+        description: 'Venture into the polar regions and experience the extreme cold.',
+        duration: '12 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Safari Adventure',
+        description: 'Join a safari adventure and witness wildlife in its natural habitat.',
+        duration: '7 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Sunset Cruise',
+        description: 'Enjoy a relaxing cruise with stunning sunset views.',
+        duration: '2 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Mountain Retreat',
+        description: 'Stay in a mountain cabin and enjoy hiking and nature walks.',
+        duration: '4 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'City Escape',
+        description: 'Escape the city and unwind in a peaceful rural setting.',
+        duration: '3 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Beachfront Resort',
+        description: 'Stay at a beachfront resort with all the amenities you need.',
+        duration: '5 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      },
+      {
+        title: 'Wildlife Trek',
+        description: 'Trek through the wilderness and encounter a variety of wildlife.',
+        duration: '6 days',
+        imageUrl: 'https://via.placeholder.com/300'
+      }
+    ];
+  }
+
+setPage(page: number) {
+  if (page < 1 || page > this.totalPagesArray.length) {
+    return; // Ensure the page number is valid
+  }
+
+  this.currentPage = page;
+  this.loadPackages();
+  
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+  get totalPagesArray() {
+    return Array(Math.ceil(this.totalItems / this.itemsPerPage)).fill(0).map((_, index) => index + 1);
   }
 }
