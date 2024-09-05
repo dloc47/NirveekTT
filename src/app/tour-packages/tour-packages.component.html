@@ -24,51 +24,51 @@
 
         <!-- Filters -->
         <div class="flex flex-wrap gap-4">
+          <!-- Location Filter -->
           <div class="flex-1 min-w-[200px]">
             <h3 class="font-medium text-gray-900 dark:text-white mb-2">
-              Category
+              Location
             </h3>
             <ul class="space-y-1">
               <li>
-                <a href="#" class="text-blue-600 hover:underline">Adventure</a>
+                <span (click)="onLocationSelect('Gangtok')"
+                  [ngClass]="{'text-primary-color': selectedLocation === 'Gangtok'}"
+                  class="cursor-pointer text-blue-600 hover:underline">Gangtok</span>
               </li>
               <li>
-                <a href="#" class="text-blue-600 hover:underline">Relaxation</a>
+                <span (click)="onLocationSelect('Lachen')"
+                  [ngClass]="{'text-primary-color': selectedLocation === 'Lachen'}"
+                  class="cursor-pointer text-blue-600 hover:underline">Lachen</span>
               </li>
               <li>
-                <a href="#" class="text-blue-600 hover:underline">Culture</a>
+                <span (click)="onLocationSelect('Pelling')"
+                  [ngClass]="{'text-primary-color': selectedLocation === 'Pelling'}"
+                  class="cursor-pointer text-blue-600 hover:underline">Pelling</span>
               </li>
+              <!-- Add more locations as necessary -->
             </ul>
           </div>
-          <div class="flex-1 min-w-[200px]">
-            <h3 class="font-medium text-gray-900 dark:text-white mb-2">
-              Price Range
-            </h3>
-            <ul class="space-y-1">
-              <li>
-                <a href="#" class="text-blue-600 hover:underline">Under $500</a>
-              </li>
-              <li>
-                <a href="#" class="text-blue-600 hover:underline">$500 - $1000</a>
-              </li>
-              <li>
-                <a href="#" class="text-blue-600 hover:underline">Over $1000</a>
-              </li>
-            </ul>
-          </div>
+
+          <!-- Duration Filter -->
           <div class="flex-1 min-w-[200px]">
             <h3 class="font-medium text-gray-900 dark:text-white mb-2">
               Duration
             </h3>
             <ul class="space-y-1">
               <li>
-                <a href="#" class="text-blue-600 hover:underline">1-3 days</a>
+                <span (click)="onDurationSelect('1-3 days')"
+                  [ngClass]="{'text-primary-color': selectedDuration === '1-3 days'}"
+                  class="cursor-pointer text-blue-600 hover:underline">1-3 days</span>
               </li>
               <li>
-                <a href="#" class="text-blue-600 hover:underline">4-7 days</a>
+                <span (click)="onDurationSelect('4-7 days')"
+                  [ngClass]="{'text-primary-color': selectedDuration === '4-7 days'}"
+                  class="cursor-pointer text-blue-600 hover:underline">4-7 days</span>
               </li>
               <li>
-                <a href="#" class="text-blue-600 hover:underline">Over 7 days</a>
+                <span (click)="onDurationSelect('Over 7 days')"
+                  [ngClass]="{'text-primary-color': selectedDuration === 'Over 7 days'}"
+                  class="cursor-pointer text-blue-600 hover:underline">Over 7 days</span>
               </li>
             </ul>
           </div>
@@ -133,8 +133,6 @@
               </div>
             </div>
           </ng-template>
-
-
         </div>
 
         <!-- Pagination -->
