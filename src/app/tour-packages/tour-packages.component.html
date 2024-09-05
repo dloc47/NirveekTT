@@ -2,9 +2,7 @@
   <div class="container mx-auto px-4">
     <!-- Title Section -->
     <div class="text-center mb-8">
-      <h1
-        class="section-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-white"
-      >
+      <h1 class="section-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-white">
         All Packages
       </h1>
     </div>
@@ -12,9 +10,7 @@
     <!-- Wrapper for Filter and Cards -->
     <div class="flex flex-col lg:flex-row">
       <!-- Sidebar for Filters -->
-      <div
-        class="w-full lg:w-1/4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6 lg:mb-0 lg:mr-6"
-      >
+      <div class="w-full lg:w-1/4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6 lg:mb-0 lg:mr-6">
         <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
           Filters
         </h2>
@@ -55,9 +51,7 @@
                 <a href="#" class="text-blue-600 hover:underline">Under $500</a>
               </li>
               <li>
-                <a href="#" class="text-blue-600 hover:underline"
-                  >$500 - $1000</a
-                >
+                <a href="#" class="text-blue-600 hover:underline">$500 - $1000</a>
               </li>
               <li>
                 <a href="#" class="text-blue-600 hover:underline">Over $1000</a>
@@ -76,9 +70,7 @@
                 <a href="#" class="text-blue-600 hover:underline">4-7 days</a>
               </li>
               <li>
-                <a href="#" class="text-blue-600 hover:underline"
-                  >Over 7 days</a
-                >
+                <a href="#" class="text-blue-600 hover:underline">Over 7 days</a>
               </li>
             </ul>
           </div>
@@ -87,14 +79,9 @@
 
       <!-- Packages Section -->
       <div class="w-full lg:w-3/4">
-        <div #cardSection
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
-        >
+        <div #cardSection class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
           <!-- ngFor Loop for Cards -->
-          <div
-            *ngFor="let package of packages"
-            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative mx-auto"
-          >
+          <div *ngFor="let package of packages" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-primary-color dark:bg-gray-800 dark:border-gray-700 relative mx-auto">
             <a href="#">
               <img
                 class="rounded-t-lg w-full h-48 object-cover"
@@ -104,31 +91,27 @@
             </a>
 
             <div class="w-full flex justify-end relative">
-              <p
-                class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs"
-              >
+              <p class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs">
                 <i class="fa-solid fa-clock"></i> {{ package.duration }}
               </p>
             </div>
 
             <div class="p-5 pb-0">
               <a href="#">
-                <h5
-                  class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden"
-                >
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden">
                   {{ package.title }}
                 </h5>
               </a>
             </div>
 
-            <div class="px-5">
+            <div class="packageDescription px-5">
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {{ package.description }}
               </p>
             </div>
-            <div class="mt-3 p-5 pt-0 flex space-x-3 justify-end">
+            <div class="packageBtns mt-3 p-5 pt-0 flex space-x-3 justify-end">
               <a
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 View / Enquire
                 <svg
@@ -152,69 +135,37 @@
         </div>
 
         <!-- Pagination -->
-        <div class="mt-6 flex justify-center">
-          <nav aria-label="Page navigation">
+        <div class="flex justify-center mt-8">
+          <nav aria-label="Page navigation example">
             <ul class="inline-flex items-center -space-x-px">
               <li>
-                <span
+                <a
                   (click)="setPage(currentPage - 1)"
-                  [ngClass]="{
-                    'opacity-50 pointer-events-none': currentPage === 1
-                  }"
-                  class="block py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   <span class="sr-only">Previous</span>
-                  <svg
-                    aria-hidden="true"
-                    class="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.707 14.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L8.414 10l4.293 4.293a1 1 0 010 1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
+                  <i class="fa-solid fa-chevron-left"></i>
+                </a>
               </li>
+
               <li *ngFor="let page of totalPagesArray">
-                <span
+                <a
                   (click)="setPage(page)"
-                  [ngClass]="{
-                    'bg-blue-50 border-blue-500 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white':
-                      currentPage === page
-                  }"
-                  class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
+                  [ngClass]="{ 'bg-primary-color text-white': page === currentPage }"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium border border-gray-300 dark:border-gray-600"
                 >
                   {{ page }}
-                </span>
+                </a>
               </li>
+
               <li>
-                <span
+                <a
                   (click)="setPage(currentPage + 1)"
-                  [ngClass]="{
-                    'opacity-50 pointer-events-none':
-                      currentPage === totalPagesArray.length
-                  }"
-                  class="block py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   <span class="sr-only">Next</span>
-                  <svg
-                    aria-hidden="true"
-                    class="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.293 14.707a1 1 0 001.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L11.586 10l-4.293 4.293a1 1 0 000 1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
               </li>
             </ul>
           </nav>
