@@ -29,6 +29,10 @@ h1.section-title {
 
   }
 
+  .section-title-h1 {
+    @apply section-title mb-12 text-center text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white tracking-tight;
+  }
+
   .section{
     @apply px-8 md:px-16 lg:px-32;
   }
