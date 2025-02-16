@@ -26,24 +26,24 @@
               type="text"
               class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
               placeholder="Your Name"
-              name="from_name"
-              id="from_name"
-              formControlName="from_name"
+              name="name"
+              id="name"
+              formControlName="name"
               [ngClass]="{
                 'error-border':
-                  contactFormGroup.get('from_name')?.invalid &&
-                  contactFormGroup.get('from_name')?.touched,
+                  contactFormGroup.get('name')?.invalid &&
+                  contactFormGroup.get('name')?.touched,
                 'focus:border-gray-500':
-                  contactFormGroup.get('from_name')?.invalid &&
-                  contactFormGroup.get('from_name')?.touched
+                  contactFormGroup.get('name')?.invalid &&
+                  contactFormGroup.get('name')?.touched
               }"
             />
             <div
               class="text-red-500 pt-1"
               *ngIf="
-                contactFormGroup.get('from_name')?.touched &&
-                (contactFormGroup.get('from_name')?.hasError('required') ||
-                  contactFormGroup.get('from_name')?.hasError('whitespace'))
+                contactFormGroup.get('name')?.touched &&
+                (contactFormGroup.get('name')?.hasError('required') ||
+                  contactFormGroup.get('name')?.hasError('whitespace'))
               "
             >
               <small>Name cannot be empty or contain only whitespace</small>
@@ -86,23 +86,23 @@
               type="email"
               class="py-3 px-4 w-full rounded-lg focus:outline-none focus:border-green-500 border-2 focus:ring-0"
               placeholder="Your Email Address"
-              name="from_email"
-              id="from_email"
-              formControlName="from_email"
+              name="email"
+              id="email"
+              formControlName="email"
               [ngClass]="{
                 'error-border':
-                  contactFormGroup.get('from_email')?.invalid &&
-                  contactFormGroup.get('from_email')?.touched,
+                  contactFormGroup.get('email')?.invalid &&
+                  contactFormGroup.get('email')?.touched,
                 'focus:border-gray-500':
-                  contactFormGroup.get('from_email')?.invalid &&
-                  contactFormGroup.get('from_email')?.touched
+                  contactFormGroup.get('email')?.invalid &&
+                  contactFormGroup.get('email')?.touched
               }"
             />
             <div
               class="text-red-500 pt-1"
               *ngIf="
-                contactFormGroup.get('from_email')?.touched &&
-                contactFormGroup.get('from_email')?.hasError('email')
+                contactFormGroup.get('email')?.touched &&
+                contactFormGroup.get('email')?.hasError('email')
               "
             >
               <small>Invalid email format</small>
@@ -110,9 +110,9 @@
             <div
               class="text-red-500 pt-1"
               *ngIf="
-                contactFormGroup.get('from_email')?.touched &&
-                (contactFormGroup.get('from_email')?.hasError('required') ||
-                  contactFormGroup.get('from_email')?.hasError('whitespace'))
+                contactFormGroup.get('email')?.touched &&
+                (contactFormGroup.get('email')?.hasError('required') ||
+                  contactFormGroup.get('email')?.hasError('whitespace'))
               "
             >
               <small>Email cannot be empty or contain only whitespace</small>

@@ -4,3 +4,48 @@
 .borderShadow {
   box-shadow: 0 0 2px white;
 }
+
+
+/* .owl-carousel .item{
+  max-height: 26rem;
+  max-width: 20rem;
+  margin: auto;
+} */
+ 
+.owl-carousel .item > div:first-child{
+  margin: auto;
+  height: 100%;
+}
+
+.main-content {
+  position: relative;
+      .custom-nav {
+          position: absolute;
+          top: 20%;
+          left: 0;
+          right: 0;
+
+          .owl-prev, .owl-next {
+              position: absolute;
+              height: 100px;
+              color: inherit;
+              background: none;
+              border: none;
+              z-index: 100;
+
+              i {
+                  font-size: 2.5rem;
+                  /* color: #0E9F6E; */
+                  color: #FFF;
+              }
+          }
+
+          .owl-prev {
+              left: -40px;
+          }
+
+          .owl-next {
+              right: -40px;
+          }
+      }
+}

@@ -37,13 +37,14 @@ export class ContactFormComponent implements OnInit {
   contactForm() {
     this.contactFormGroup = this.fb.group({
       to_name: ['Nirveek Tours & Travels'],
-      from_name: ['', [Validators.required, this.noWhitespaceValidator]],
+      name: ['', [Validators.required, this.noWhitespaceValidator]],
       subject: [0, [Validators.required, this.DropDownIDValidator]],
-      from_email: [
+      email: [
         '',
         [Validators.required, Validators.email, this.noWhitespaceValidator],
       ],
       message: ['', [Validators.required, this.noWhitespaceValidator]],
+      from_name: "Website Contact Form"
     });
   }
 
@@ -72,8 +73,10 @@ export class ContactFormComponent implements OnInit {
     try {
       emailjs.init('HFsOjtE8qOZo3u-ge');
       // Use the interface to type-check the form data
-      const emailData: Record<string, any> = this.contactFormGroup.value;    
-      await emailjs.send('service_psx1wan', 'template_wnro4ih', emailData);
+      const emailData: Record<string, any> = this.contactFormGroup.value;   
+      console.log(emailData);
+       
+      await emailjs.send('service_qslricz', 'template_w1zgb4q', emailData);
       this.toastr.success('Message has been sent successfully!');
       this.contactFormGroup.reset({
         to_name: 'Nirveek Tours & Travels',
