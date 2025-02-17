@@ -1,6 +1,22 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 declare var $: any;
+
+interface Destination {
+  destinationImage: string;
+  duration: string;
+  destinationTitle: string;
+  destinationDescription: string;
+  touritinerary: TourDay[];
+  including: string[];
+  exclusion: string[];
+}
+
+interface TourDay {
+  day: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-popular-destination',
@@ -8,9 +24,12 @@ declare var $: any;
   styleUrls: ['./popular-destination.component.css'],
 })
 export class PopularDestinationComponent implements OnInit, AfterViewInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private viewportScroller: ViewportScroller
+  ) {}
 
-  popularDestination: any = [
+  popularDestination: Destination[] = [
     {
       destinationImage:
         'assets/images/popular-destination/mg-marg.jpg',
@@ -47,13 +66,13 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
       ],
       exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+        'Any other services or meals which are not mentioned in the Inclusions.',
         'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
         'Entry fee for all monuments and places of interest if any.',
         'Airfares and Train ticket charges if any.',
         'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
         'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
+        'Any other items not mentioned in Inclusions.'
       ],
     },
     {
@@ -97,13 +116,13 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
       ],
       exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+        'Any other services or meals which are not mentioned in the Inclusions.',
         'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
         'Entry fee for all monuments and places of interest if any.',
         'Airfares and Train ticket charges if any.',
         'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
         'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
+        'Any other items not mentioned in Inclusions.'
       ],
     },
     {
@@ -142,13 +161,13 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
       ],
       exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+        'Any other services or meals which are not mentioned in the Inclusions.',
         'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
         'Entry fee for all monuments and places of interest if any.',
         'Airfares and Train ticket charges if any.',
         'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
         'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
+        'Any other items not mentioned in Inclusions.'
       ],
     },
     {
@@ -187,55 +206,15 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
       ],
       exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+        'Any other services or meals which are not mentioned in the Inclusions.',
         'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
         'Entry fee for all monuments and places of interest if any.',
         'Airfares and Train ticket charges if any.',
         'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
         'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
+        'Any other items not mentioned in Inclusions.'
       ],
     },
-    // {
-    //   destinationImage:
-    //     'https://www.hlimg.com/images/things2do/738X538/48_1523009794t.jpg',
-    //   duration: '4 Nights, 5 Days',
-    //   destinationTitle: 'Varsey Tour',
-    //   destinationDescription:
-    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-    //   touritinerary: [
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //   ],
-    //   including: [
-    //     'Accommodation as per itinerary.',
-    //     'All transfers & sight seeings as per itinerary.',
-    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-    //   ],
-    //   exclusion: [
-    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-    //     'Entry fee for all monuments and places of interest if any.',
-    //     'Airfares and Train ticket charges if any.',
-    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
-    //     'Any other items not mentioned in ‘Inclusions’.',
-    //   ],
-    // },
     {
       destinationImage:
         'assets/images/popular-destination/pelling-sky-walk.jpg',
@@ -282,13 +261,13 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
       ],
       exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+        'Any other services or meals which are not mentioned in the Inclusions.',
         'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
         'Entry fee for all monuments and places of interest if any.',
         'Airfares and Train ticket charges if any.',
         'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
         'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
+        'Any other items not mentioned in Inclusions.'
       ],
     },
     {
@@ -332,7 +311,7 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         {
           day: 'Darjeeling Sightseeing',
           description:
-            'Early in the morning, visit Tiger Hill to witness the breathtaking sunrise over Mt. Khangchendzonga (28,208 ft), the world’s third-highest peak. On your return, explore Ghoom Monastery, Batasia Loop, and Senchal Lake. After breakfast, visit Dhirdham Temple, Dali Monastery, Aloobari Monastery, and Mirik Lake. Return to your Darjeeling hotel for an overnight stay.',
+            'Early in the morning, visit Tiger Hill to witness the breathtaking sunrise over Mt. Khangchendzonga (28208 ft), the world\'s third-highest peak. On your return, explore Ghoom Monastery, Batasia Loop, and Senchal Lake. After breakfast, visit Dhirdham Temple, Dali Monastery, Aloobari Monastery, and Mirik Lake. Return to your Darjeeling hotel for an overnight stay.',
         },
         {
           day: 'Departure',
@@ -347,151 +326,38 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
       ],
       exclusion: [
-        'Any other services or meals which are not mentioned in the ‘Inclusions’.',
+        'Any other services or meals which are not mentioned in the Inclusions.',
         'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
         'Entry fee for all monuments and places of interest if any.',
         'Airfares and Train ticket charges if any.',
         'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
         'Any increase in taxes or fuel charges affecting surface transport costs.',
-        'Any other items not mentioned in ‘Inclusions’.',
+        'Any other items not mentioned in Inclusions.'
       ],
     },
-    // {
-    //   destinationImage:
-    //     'https://kanchenjungaholidays.com/images/destination/sikkim/west-sikkim/uttarey-main/uttarey3.jpg',
-    //   duration: '3 Nights, 4 Days',
-    //   destinationTitle: 'Uttarey Tour',
-    //   destinationDescription:
-    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-    //   touritinerary: [
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //   ],
-    //   including: [
-    //     'Accommodation as per itinerary.',
-    //     'All transfers & sight seeings as per itinerary.',
-    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-    //   ],
-    //   exclusion: [
-    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-    //     'Entry fee for all monuments and places of interest if any.',
-    //     'Airfares and Train ticket charges if any.',
-    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
-    //     'Any other items not mentioned in ‘Inclusions’.',
-    //   ],
-    // },
-    // {
-    //   destinationImage:
-    //     'https://static2.tripoto.com/media/filter/tst/img/413392/TripDocument/1548765524_1548765295327.jpg',
-    //   duration: '3 Nights, 4 Days',
-    //   destinationTitle: 'Dzongu Tour',
-    //   destinationDescription:
-    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-    //   touritinerary: [
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //   ],
-    //   including: [
-    //     'Accommodation as per itinerary.',
-    //     'All transfers & sight seeings as per itinerary.',
-    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-    //   ],
-    //   exclusion: [
-    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-    //     'Entry fee for all monuments and places of interest if any.',
-    //     'Airfares and Train ticket charges if any.',
-    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
-    //     'Any other items not mentioned in ‘Inclusions’.',
-    //   ],
-    // },
-    // {
-    //   destinationImage: 'https://static.toiimg.com/photo/53909065.cms',
-    //   duration: '11 Nights, 12 Days',
-    //   destinationTitle: 'Sikkim Darjeeling Kalimpong',
-    //   destinationDescription:
-    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit quas excepturi sunt nostrum explicabo. Odio sit quas nulla quisquam voluptates sapiente debitis asperiores autem illum! Minima, quia suscipit explicabo ab obcaecati earum sapiente, sunt minus nesciunt rem, quisquam magnam voluptatum.',
-    //   touritinerary: [
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-    //     },
-    //     {
-    //       day: 'Arrival Kathmandu & transfer to Pokhra',
-    //       description:
-    //         'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-    //     },
-    //   ],
-    //   including: [
-    //     'Accommodation as per itinerary.',
-    //     'All transfers & sight seeings as per itinerary.',
-    //     'Pickup and drop-off at Bagdogra Airport (IXB) or New Jalpaiguri Railway Station (NJP).',
-    //     'Vehicle provided on a point-to-point basis (no per day or per kilometer charges, no disposal basis).'
-    //   ],
-    //   exclusion: [
-    //     'Any other services or meals which are not mentioned in the ‘Inclusions’.',
-    //     'Expense of personal nature such as tips, laundry, telephones, beverages etc.',
-    //     'Entry fee for all monuments and places of interest if any.',
-    //     'Airfares and Train ticket charges if any.',
-    //     'Costs arising from natural calamities such as landslides, roadblocks, political unrest, etc.',
-    //     'Any increase in taxes or fuel charges affecting surface transport costs.',
-    //     'Any other items not mentioned in ‘Inclusions’.',
-    //   ],
-    // },
   ];
 
-  ngOnInit() {}
+  ngOnInit() {
+    // Restore scroll position when navigating back
+    if (window.history.state?.navigationId > 1) {
+      const savedPosition = sessionStorage.getItem('scrollPosition');
+      if (savedPosition) {
+        const position = JSON.parse(savedPosition);
+        setTimeout(() => {
+          this.viewportScroller.scrollToPosition(position);
+        }, 0);
+      }
+    }
+  }
   ngAfterViewInit(): void {
     $('.popular-destination').owlCarousel({
       loop: true,
-      items: 3,
-      margin: 25,
+      margin: 24,
       autoplay: true,
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
-      nav: true,
-      navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-      ],
-      navContainer: '.main-content .custom-nav',
+      nav: false,
+      dots: true,
       responsive: {
         0: {
           items: 1,
@@ -499,24 +365,26 @@ export class PopularDestinationComponent implements OnInit, AfterViewInit {
         640: {
           items: 2,
         },
-        768: {
+        1024: {
           items: 3,
-        },
-        // ,
-        // 1200: {
-        //   items: 4
-        // }
-        //   },
-        //   1500:{
-        //       items:6
-        //   }
-      },
+        }
+      }
+    });
+
+    // Custom navigation
+    $('.custom-next-btn').click(() => {
+      $('.popular-destination').trigger('next.owl.carousel');
+    });
+
+    $('.custom-prev-btn').click(() => {
+      $('.popular-destination').trigger('prev.owl.carousel');
     });
   }
 
-  redirectToItinerary(destination: any) {
-    // Navigate to itinerary-details component with specific data
-    console.log(destination);
+  redirectToItinerary(destination: Destination): void {
+    // Store current scroll position
+    const position = this.viewportScroller.getScrollPosition();
+    sessionStorage.setItem('scrollPosition', JSON.stringify(position));
 
     this.router.navigate(['/itinerary'], { state: { data: destination } });
   }

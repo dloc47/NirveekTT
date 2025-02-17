@@ -1,13 +1,22 @@
-
-.owl-carousel .item{
-    /* height: 26rem; */
-    max-height: 26rem;
+.owl-carousel .item {
     max-width: 20rem;
     margin: auto;
+    padding: 0.5rem;
 }
-.owl-carousel .item > div:first-child{
-    margin: auto;
+
+.owl-carousel .item > div {
     height: 100%;
+}
+
+/* Ensure all cards in a row have same height */
+.owl-stage {
+    display: flex;
+    align-items: stretch;
+}
+
+.owl-item {
+    display: flex;
+    height: auto;
 }
 
 .packageDescription {
@@ -49,4 +58,41 @@
                 right: -40px;
             }
         }
+}
+
+/* Custom dots styling */
+:host ::ng-deep .owl-dots {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+:host ::ng-deep .owl-dot span {
+    width: 8px;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .owl-dot.active span {
+    width: 24px;
+    background: var(--primary-color);
+}
+
+/* Ensure proper line clamping */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

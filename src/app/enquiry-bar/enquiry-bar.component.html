@@ -1,17 +1,46 @@
-<div class="EnquiryBar text-center flex flex-col md:flex-row flex-wrap justify-center items-center p-6 md:p-8 w-4/5 gap-4 mx-auto 
-  bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-md my-8">
-  <div class="Name w-full max-w-80 m-0">
-    <input type="text" class="border rounded w-full" placeholder="Your Name" />
-  </div>
-  <div class="Email w-full max-w-80 m-0">
-    <input type="email" class="border rounded w-full" placeholder="Email Id" />
-  </div>
-  <div class="Mobile w-full max-w-80 m-0">
-    <input type="tel" class="border rounded w-full" placeholder="Mobile Number" />
-  </div>
-  <div class="EnquiryBtnWrapper w-full max-w-80 m-0">
-    <button class="border px-2 py-2 bg-transparent text-white border-white w-full max-w-80 rounded-md">
-      Get a Free Quote
-    </button>
+<div class="enquiry-bar text-center p-6 w-11/12 md:w-4/5 mx-auto my-12 rounded-2xl shadow-xl bg-gradient-to-r from-emerald-500 to-teal-500">
+  <div class="max-w-4xl mx-auto">
+    <!-- Title Section -->
+    <div class="mb-5">
+      <h2 class="text-white text-2xl md:text-3xl font-bold mb-1">Get Your Free Travel Quote</h2>
+      <p class="text-white/80 text-sm">Plan your dream vacation with us!</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="relative group overflow-hidden rounded-lg">
+        <input 
+          type="text" 
+          class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 outline-none focus:bg-white/20 transition-all duration-300"
+          placeholder="Your Name"
+        />
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white/0 group-hover:bg-white/70 transition-all duration-300 transform translate-x-[-100%] group-hover:translate-x-0"></div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-lg">
+        <input 
+          type="email" 
+          class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 outline-none focus:bg-white/20 transition-all duration-300"
+          placeholder="Email Address"
+        />
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white/0 group-hover:bg-white/70 transition-all duration-300 transform translate-x-[-100%] group-hover:translate-x-0"></div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-lg">
+        <input 
+          type="tel" 
+          class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 outline-none focus:bg-white/20 transition-all duration-300"
+          placeholder="Mobile Number"
+        />
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white/0 group-hover:bg-white/70 transition-all duration-300 transform translate-x-[-100%] group-hover:translate-x-0"></div>
+      </div>
+
+      <button class="w-full px-6 py-2.5 bg-white text-emerald-600 rounded-lg font-semibold 
+        transform hover:scale-105 transition-all duration-300 hover:shadow-lg
+        active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+        Get Quote
+        <span class="ml-2">→</span>
+      </button>
+    </div>
   </div>
 </div>

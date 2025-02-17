@@ -1,102 +1,86 @@
-<section class="section pt-14 pb-32">
+<section class="section pb-10">
   <div class="section-title-container text-center">
     <h1 class="section-title-h1">
       Explore Popular Destination
     </h1>
   </div>
 
-  <!-- <div class="w-full items-end justify-end flex mb-4">
+  <div class="main-content relative">
+    <!-- Carousel with side navigation -->
+    <div class="relative">
+      <div class="owl-carousel popular-destination owl-theme">
+        <div *ngFor="let destination of popularDestination" class="item">
+          <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-[26rem]">
+            <!-- Image Container -->
+            <div class="relative h-48">
+              <img 
+                [src]="destination.destinationImage"
+                [alt]="destination.destinationTitle"
+                class="w-full h-full object-cover"
+              />
+              <!-- Duration Badge -->
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium text-gray-700 flex items-center gap-1.5 shadow-sm">
+                  <i class="fa-solid fa-clock text-primary-color"></i>
+                  {{ destination.duration }}
+                </span>
+              </div>
+            </div>
 
-    <div class="mt-8 flex gap-4 lg:mt-0 owl-nav">
-      <button aria-label="Previous slide" id="keen-slider-previous"
-        class="rounded-full border border-primary-color p-3 text-primary-color transition hover:bg-primary-color hover:text-white custom-nav-btn prev-btn">
+            <!-- Content -->
+            <div class="p-5 flex flex-col h-[calc(26rem-12rem)]">
+              <h3 class="text-xl font-bold text-gray-800 mb-2 line-clamp-2 min-h-[3.2rem]">
+                {{ destination.destinationTitle }}
+              </h3>
+              
+              <p class="text-gray-600 text-sm mb-5" [class]="'line-clamp-' + (destination.destinationTitle.length > 35 ? '2' : '3')">
+                {{ destination.destinationDescription }}
+              </p>
+
+              <!-- Button at bottom -->
+              <div class="mt-auto">
+                <button 
+                  (click)="redirectToItinerary(destination)"
+                  class="w-full inline-flex items-center justify-center px-4 py-2.5 
+                         bg-primary-color text-white rounded-lg font-medium
+                         hover:bg-primary-hover-color transition-all duration-300
+                         group"
+                >
+                  View Details
+                  <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side Navigation Buttons -->
+      <button class="custom-prev-btn absolute top-1/2 -left-6 transform -translate-y-1/2 
+                     rounded-full border border-primary-color p-3 text-primary-color 
+                     transition-all duration-300 hover:bg-primary-color hover:text-white
+                     focus:outline-none focus:ring-2 focus:ring-primary-color/50
+                     hidden md:flex items-center justify-center z-20
+                     bg-white">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-          stroke="currentColor" class="size-5 rtl:rotate-180">
+          stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
       </button>
 
-      <button aria-label="Next slide"
-        class="rounded-full border border-primary-color p-3 text-primary-color transition hover:bg-primary-color hover:text-white custom-nav-btn next-btn">
-        <svg class="size-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
+      <button class="custom-next-btn absolute top-1/2 -right-6 transform -translate-y-1/2 
+                     rounded-full border border-primary-color p-3 text-primary-color 
+                     transition-all duration-300 hover:bg-primary-color hover:text-white
+                     focus:outline-none focus:ring-2 focus:ring-primary-color/50
+                     hidden md:flex items-center justify-center z-20
+                     bg-white">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
         </svg>
       </button>
-    </div>
-  </div> -->
-
-  <div class="main-content">
-    <div class="owl-carousel popular-destination owl-theme">
-      <div *ngFor="let destination of popularDestination" class="item">
-        <div
-          class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative"
-        >
-          <a>
-            <img
-              class="rounded-t-lg h-48 object-cover"
-              
-              src="{{ destination.destinationImage }}"
-              alt=""
-            />
-          </a>
-
-          <div class="w-full flex justify-end relative">
-            <p
-              class="absolute -top-8 bg-gray-100 border rounded-l-lg p-1 px-2 inline-block m-0 font-semibold text-gray-700 dark:text-gray-400 text-xs"
-            >
-              <i class="fa-solid fa-clock"></i> {{ destination.duration }}
-            </p>
-          </div>
-
-          <div class="packageName p-5 pb-0">
-            <a href="#">
-              <h5
-                class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white max-h-20 overflow-x-auto overflow-hidden"
-              >
-                {{ destination.destinationTitle }}
-              </h5>
-            </a>
-          </div>
-
-          <div class="packageDescription px-5">
-            <p
-              class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-pretty"
-            >
-              {{ destination.destinationDescription }}
-            </p>
-          </div>
-          <div class="packageBtns mt-3 p-5 pt-0 flex space-x-3 justify-end">
-            <a
-              (click)="redirectToItinerary(destination)"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-color rounded-lg hover:bg-primary-hover-color focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              View / Enquire
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="owl-theme">
-      <div class="owl-controls">
-        <div class="custom-nav owl-nav"></div>
-      </div>
     </div>
   </div>
 </section>
