@@ -1,120 +1,131 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { TourPackageService } from 'src/services/tour-package.service';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tour-packages',
   templateUrl: './tour-packages.component.html',
   styleUrls: ['./tour-packages.component.css'],
 })
-export class TourPackagesComponent implements OnInit {
-
+export class TourPackagesComponent implements OnInit, OnDestroy {
   currentPage: number = 1;
-  itemsPerPage: number = 9; // Default for large screens
-  totalItems: number = 30; // Replace with actual total count
+  itemsPerPage: number = 4; // This is already set to 4
+  totalItems: number = 0;
   packages: any[] = [];
   filteredPackages: any[] = [];
   searchKeyword: string = '';
-  noDataFound: boolean = false; // New property to indicate no data found
+  noDataFound: boolean = false;
   selectedLocation: string = '';
   selectedDuration: string = '';
+  private tourPackagesSubscription: Subscription | undefined;
+  isFilterOpen: boolean = false;
+
+  // Add these new properties
+  availableLocations: string[] = [
+    'Gangtok',
+    'Lachen',
+    'Pelling',
+    'Darjeeling',
+    'Kalimpong',
+    'Lachung'
+  ];
+
+  availableDurations: string[] = [
+    '1-3 days',
+    '4-7 days',
+    'Over 7 days'
+  ];
+
+  constructor(
+    private tourPackageService: TourPackageService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.adjustItemsPerPage(window.innerWidth);
-    this.totalItems = this.getAllPackages().length; // Set the totalItems based on dummy data
-    this.loadPackages();
+    // Subscribe to the tour packages observable
+    this.tourPackagesSubscription = this.tourPackageService.getTourPackages()
+      .subscribe(packages => {
+        this.filteredPackages = packages;
+        this.totalItems = packages.length;
+        this.loadPackages();
+      });
+  }
+
+  ngOnDestroy() {
+    // Clean up subscription when component is destroyed
+    if (this.tourPackagesSubscription) {
+      this.tourPackagesSubscription.unsubscribe();
+    }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
+    if (event.target.innerWidth >= 1024) { // lg breakpoint
+      this.isFilterOpen = false;
+    }
     this.adjustItemsPerPage(event.target.innerWidth);
     this.loadPackages();
   }
 
   adjustItemsPerPage(width: number) {
-    if (width < 768) { // Tailwind's `sm` breakpoint
-      this.itemsPerPage = 6;
-    } else if (width >= 768 && width < 1024) { // Tailwind's `md` breakpoint
-      this.itemsPerPage = 8;
-    } else { // Larger screens
-      this.itemsPerPage = 9;
-    }
+    // Always keep 4 items per page regardless of screen size
+    this.itemsPerPage = 4;
   }
 
   loadPackages() {
-    const allPackages = this.getAllPackages();
-    this.totalItems = allPackages.length;
-
-    let filtered = allPackages;
+    let filtered = [...this.filteredPackages]; // Create a copy of the array
 
     // Apply location filter
     if (this.selectedLocation) {
-      filtered = filtered.filter(pkg => pkg.title.toLowerCase().includes(this.selectedLocation.toLowerCase()));
+      filtered = filtered.filter((pkg) =>
+        pkg.location.toLowerCase().includes(this.selectedLocation.toLowerCase())
+      );
     }
 
     // Apply duration filter
     if (this.selectedDuration) {
       const [minDays, maxDays] = this.parseDurationRange(this.selectedDuration);
-      console.log(`Filtering for duration range: ${minDays} to ${maxDays} days`);
-      
-      filtered = filtered.filter(pkg => {
+      filtered = filtered.filter((pkg) => {
         const pkgDays = this.extractDays(pkg.duration);
-        console.log(`Package duration: ${pkgDays} days`);
-
-        return pkgDays >= minDays && pkgDays <= maxDays;
+        return pkgDays >= minDays && (maxDays === 0 || pkgDays <= maxDays);
       });
     }
 
     // Apply search keyword filter
     if (this.searchKeyword.trim()) {
-      filtered = filtered.filter(pkg => 
-        pkg.title.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
-        pkg.duration.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
-        pkg.description.toLowerCase().includes(this.searchKeyword.toLowerCase())
+      filtered = filtered.filter(
+        (pkg) =>
+          pkg.destinationTitle.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
+          pkg.location.toLowerCase().includes(this.searchKeyword.toLowerCase()) ||
+          pkg.destinationDescription.toLowerCase().includes(this.searchKeyword.toLowerCase())
       );
     }
 
-    this.filteredPackages = filtered;
-    this.noDataFound = this.filteredPackages.length === 0; // Update the noDataFound property
+    this.totalItems = filtered.length;
+    this.noDataFound = filtered.length === 0;
 
     // Paginate the filtered packages
     const start = (this.currentPage - 1) * this.itemsPerPage;
     const end = start + this.itemsPerPage;
-    this.packages = this.filteredPackages.slice(start, end);
+    this.packages = filtered.slice(start, end);
   }
-
-  getAllPackages() {
-    // Dummy data for packages
-    return [
-      {
-        imageUrl: 'https://media.tripinvites.com/places/gangtok/mg-road/mg-road-featured.jpg',
-        duration: '2 Nights, 3 Days',
-        title: 'Gangtok Adventure',
-        description: 'Discover the vibrant culture and scenic beauty of Gangtok with our 4-day adventure package. Enjoy guided tours of Rumtek Monastery, Drul Chorten, and the Tibetan Museum. Explore local markets, take a cable car ride, and visit Tsomgo Lake and Baba Mandir.',
-      },
-      {
-        imageUrl: 'https://i.redd.it/huvj43adtfr01.jpg',
-        duration: '4 Nights, 5 Days',
-        title: 'Lachen Adventure',
-        description: 'Adventure awaits in Lachen with this thrilling 4-day package. Experience the serene landscapes, visit the beautiful Gurudongmar Lake, and explore the charming town of Lachen.',
-      },
-      {
-        imageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyR1cOyvw4GWRs7guJXBV3iEH9Z6W_YG-71WqHMkY9z9Xyu2SCVtZehpc_f5Nv58nuWyFVaigjJCpw4F5fmvW-TC3xoLNQfXA0wBLnPDKGnJurWPGxuLE3ijVhbFieRT7LJRa75-lo8XoZFcOs8GXAwrJ-mLCeNFMyGQSdTl5BuIw4AR_bhfgbkV4s/s640/glass%20bridge%20pelling.jpg',
-        duration: '3 Nights, 4 Days',
-        title: 'Pelling Paradise',
-        description: 'Enjoy the serene landscapes of Pelling with this 3-day package. Explore the breathtaking views of the Kanchenjunga range, visit the beautiful Pemayangtse Monastery, and take a stroll over the famous Glass Bridge.',
-      }
-    ];
-  }
-  
 
   parseDurationRange(durationRange: string): [number, number] {
-    const [minDays, maxDays] = durationRange.split('-').map(day => parseInt(day.trim(), 10));
-    return [minDays || 0, maxDays || minDays || 0];
+    if (durationRange === 'Over 7 days') {
+      return [8, 0]; // 0 means no upper limit
+    }
+    const parts = durationRange.split('-');
+    const minDays = parseInt(parts[0], 10);
+    const maxDays = parts[1] ? parseInt(parts[1], 10) : minDays;
+    return [minDays, maxDays];
   }
 
   extractDays(duration: string): number {
     const dayMatch = duration.match(/(\d+) Days?/i);
     const nightMatch = duration.match(/(\d+) Nights?/i);
-    
+
     if (dayMatch) {
       return parseInt(dayMatch[1], 10);
     }
@@ -125,36 +136,109 @@ export class TourPackagesComponent implements OnInit {
   }
 
   setPage(page: number) {
-    if (page < 1 || page > this.totalPagesArray.length) {
-      return; // Ensure the page number is valid
+    const totalPages = Math.ceil(this.filteredPackages.length / this.itemsPerPage);
+    
+    // Validate page number
+    if (page < 1 || page > totalPages) {
+      return;
     }
 
     this.currentPage = page;
     this.loadPackages();
-    
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Scroll to top of the packages section
+    const packagesSection = document.querySelector('.packages-section');
+    if (packagesSection) {
+      packagesSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   get totalPagesArray() {
-    return Array(Math.ceil(this.totalItems / this.itemsPerPage)).fill(0).map((_, index) => index + 1);
+    const totalPages = Math.ceil(this.filteredPackages.length / this.itemsPerPage);
+    return Array(totalPages).fill(0).map((_, index) => index + 1);
   }
 
   onSearchChange(event: any) {
     this.searchKeyword = event.target.value;
-    this.currentPage = 1; // Reset to the first page on search
+    this.currentPage = 1;
     this.loadPackages();
   }
 
   onLocationSelect(location: string) {
     this.selectedLocation = this.selectedLocation === location ? '' : location;
-    this.currentPage = 1; // Reset to the first page on filter change
+    this.currentPage = 1;
     this.loadPackages();
+    this.onFilterSelect();
   }
 
   onDurationSelect(duration: string) {
     this.selectedDuration = this.selectedDuration === duration ? '' : duration;
-    this.currentPage = 1; // Reset to the first page on filter change
+    this.currentPage = 1;
     this.loadPackages();
+    this.onFilterSelect();
+  }
+
+  get hasActiveFilters(): boolean {
+    return !!(this.searchKeyword || this.selectedLocation || this.selectedDuration);
+  }
+
+  toggleFilters() {
+    this.isFilterOpen = !this.isFilterOpen;
+  }
+
+  clearSearch() {
+    this.searchKeyword = '';
+    this.currentPage = 1;
+    this.loadPackages();
+  }
+
+  clearLocationFilter() {
+    this.selectedLocation = '';
+    this.currentPage = 1;
+    this.loadPackages();
+  }
+
+  clearDurationFilter() {
+    this.selectedDuration = '';
+    this.currentPage = 1;
+    this.loadPackages();
+  }
+
+  clearAllFilters() {
+    this.searchKeyword = '';
+    this.selectedLocation = '';
+    this.selectedDuration = '';
+    this.currentPage = 1;
+    this.isFilterOpen = false; // Close mobile filters after clearing
+    this.loadPackages();
+  }
+
+  // Add this method to handle filter closing on selection in mobile
+  onFilterSelect() {
+    if (window.innerWidth < 1024) { // Close filter on mobile after selection
+      this.isFilterOpen = false;
+    }
+  }
+
+  // Add this method to get no results message
+  getNoResultsMessage(): string {
+    if (this.searchKeyword && (this.selectedLocation || this.selectedDuration)) {
+      return `No packages found matching "${this.searchKeyword}" with the selected filters. Try adjusting your search criteria or removing some filters.`;
+    } else if (this.searchKeyword) {
+      return `No packages found matching "${this.searchKeyword}". Try different search terms.`;
+    } else if (this.selectedLocation && this.selectedDuration) {
+      return `No packages found in ${this.selectedLocation} with duration ${this.selectedDuration}. Try adjusting your filters.`;
+    } else if (this.selectedLocation) {
+      return `No packages found in ${this.selectedLocation}. Try selecting a different location.`;
+    } else if (this.selectedDuration) {
+      return `No packages found with duration ${this.selectedDuration}. Try selecting a different duration.`;
+    }
+    return 'No packages found. Please try different search criteria.';
+  }
+
+  viewPackageDetails(packageData: any) {
+    this.router.navigate(['/itinerary'], {
+      state: { data: packageData }
+    });
   }
 }

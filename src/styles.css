@@ -7,6 +7,14 @@
 /* Style for ngx-toastr */
 @import 'ngx-toastr/toastr';
 
+/* Import Noto Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Apply Noto Sans as the default font */
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 h1.section-title {
     position: relative;
     display: inline-block;
@@ -29,8 +37,14 @@ h1.section-title {
 
   }
 
-  .section-title-h1 {
+  /* Normal section title */
+  /* .section-title-h1 {
     @apply section-title mb-12 text-center text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white tracking-tight;
+  } */
+
+  /* Bit smaller section title */
+  .section-title-h1 {
+    @apply section-title mb-12 text-center text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-800 dark:text-white tracking-tight;
   }
 
   .section{

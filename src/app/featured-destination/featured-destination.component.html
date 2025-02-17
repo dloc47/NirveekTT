@@ -1,13 +1,18 @@
 <section class="section bg-gradient-to-r from-green-400 to-green-600 py-12 text-white mb-16">
-    <div class="section-title-container text-center">
-      <h1 class="section-title-h1">Featured Destination</h1>
-    </div>
-    <div class="container mx-auto">
-      <div class="main-content">
-        <div class="owl-carousel featured-destination owl-theme">
-          <div class="item overflow-hidden hover:scale-105 duration-300 p-2 rounded-lg" *ngFor="let item of featuredDestinations" (click)="redirectToItinerary(item)">
+  <div class="section-title-container text-center">
+    <h1 class="section-title-h1">Featured Destination</h1>
+  </div>
+  <div class="container mx-auto">
+    <div class="main-content">
+      <div class="owl-carousel featured-destination owl-theme">
+        <ng-container *ngIf="tourPackages$ | async as tourPackages">
+          <div
+            class="item overflow-hidden hover:scale-105 duration-300 p-2 rounded-lg"
+            *ngFor="let item of tourPackages"
+            (click)="redirectToItinerary(item)"
+          >
             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-              <img [src]="item.destinationImage" alt="Destination 1" class="w-full h-64 object-cover">
+              <img [src]="item.destinationImage" alt="Destination" class="w-full h-64 object-cover">
               <div class="p-6 min-h-[180px] max-h-[180px]">
                 <h3 class="text-xl font-bold mb-2 text-center">{{ item.destinationTitle }}</h3>
                 <p class="text-gray-300 text-center flex flex-col">
@@ -21,12 +26,13 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="owl-theme">
-          <div class="owl-controls">
-            <div class="custom-nav owl-nav"></div>
-          </div>
+        </ng-container>
+      </div>
+      <div class="owl-theme">
+        <div class="owl-controls">
+          <div class="custom-nav owl-nav"></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

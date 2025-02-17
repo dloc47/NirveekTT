@@ -1,7 +1,12 @@
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
   <!-- <div class="relative h-60 overflow-hidden rounded-lg md:min-h-96 slider-images-container"> -->
   <div class="relative h-60 overflow-hidden md:min-h-96 slider-images-container">
-    <div class="duration-1000 ease-in-out" data-carousel-item>
+    <!-- Skeleton loader -->
+    <div class="skeleton-wrapper" *ngIf="isLoading">
+      <div class="skeleton-loader"></div>
+    </div>
+
+    <div class="duration-1000 ease-in-out" [style.visibility]="isLoading ? 'hidden' : 'visible'" data-carousel-item>
       <img src="assets/images/carousel/buddha-park.jpg"
         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-cover" />
       <div
@@ -35,7 +40,7 @@
         <div class="image-info bg-black bg-opacity-50 text-white p-4 rounded-md">
           <div class="text-lg font-bold mb-1">The Beauty of Exploration</div>
           <div class="text-sm mb-1 max-w-60">
-            "Travel makes you realize that no matter how much you know, there’s always more to learn."
+            "Travel makes you realize that no matter how much you know, there's always more to learn."
           </div>
         </div>
       </div>
